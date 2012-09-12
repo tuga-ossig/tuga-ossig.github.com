@@ -4,7 +4,7 @@
   <title><![CDATA[Category: latex | TUGA OSSIG]]></title>
   <link href="http://tuga-ossig.github.com/blog/categories/latex/atom.xml" rel="self"/>
   <link href="http://tuga-ossig.github.com/"/>
-  <updated>2012-09-12T22:29:25+02:00</updated>
+  <updated>2012-09-12T22:37:58+02:00</updated>
   <id>http://tuga-ossig.github.com/</id>
   <author>
     <name><![CDATA[Joe R. Nassimian]]></name>
@@ -12,6 +12,35 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Session-01]]></title>
+    <link href="http://tuga-ossig.github.com/blog/2012/09/07/session-02/"/>
+    <updated>2012-09-07T00:00:00+02:00</updated>
+    <id>http://tuga-ossig.github.com/blog/2012/09/07/session-02</id>
+    <content type="html"><![CDATA[<p>There was a great interest among us on powerpoint alternatives, we took a look
+at awwation and zooming presentations, since a member mentioned prezi.</p>
+
+<p>However, since everyone had a scientificaly inclined interest, we had to take a
+look at Latex first for the following reasons:</p>
+
+<ul>
+<li>LaTeX is widely used in academia, so it concerns our members.</li>
+<li>Latex's math syntax is used everywhere formulas are needed: from scientific
+papers, to wikipedia articles.</li>
+<li>It can produce a plethora of formats: Books, reports, articles and
+presentations.</li>
+<li>It's a prerequisite to learning beamer.</li>
+<li>Latex is a professional document preparation system for the TeX typesetting
+program, used by technical book publishers like Springer.</li>
+<li>Last but not least, it produces sober and nice pdf documents.</li>
+</ul>
+
+
+<p>On windows, we'll cover how to setup MikTex, and on Linux, we'll cover how to
+install texlive on Ubuntu.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Session-01]]></title>
