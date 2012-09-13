@@ -4,7 +4,7 @@
   <title><![CDATA[Category: latex | TUGA OSSIG]]></title>
   <link href="http://tuga-ossig.github.com/blog/categories/latex/atom.xml" rel="self"/>
   <link href="http://tuga-ossig.github.com/"/>
-  <updated>2012-09-12T22:48:21+02:00</updated>
+  <updated>2012-09-13T18:20:52+02:00</updated>
   <id>http://tuga-ossig.github.com/</id>
   <author>
     <name><![CDATA[Joe R. Nassimian]]></name>
@@ -27,11 +27,14 @@
     <link href="http://tuga-ossig.github.com/blog/2012/07/24/session-01/"/>
     <updated>2012-07-24T00:00:00+02:00</updated>
     <id>http://tuga-ossig.github.com/blog/2012/07/24/session-01</id>
-    <content type="html"><![CDATA[<p>There was a great interest among us on powerpoint alternatives, we took a look
+    <content type="html"><![CDATA[<p>There was a great interest among us for powerpoint alternatives, we took a look
 at awwation and zooming presentations, since a member mentioned prezi.</p>
 
-<p>However, since everyone had a scientificaly inclined interest, we had to take a
+<p>However, since everyone present were scientificaly inclined, we had to take a
 look at Latex first for the following reasons:</p>
+
+<!-- more -->
+
 
 <ul>
 <li>LaTeX is widely used in academia, so it concerns our members.</li>
@@ -46,8 +49,319 @@ program, used by technical book publishers like Springer.</li>
 </ul>
 
 
-<p>On windows, we'll cover how to setup MikTex, and on Linux, we'll cover how to
-install texlive on Ubuntu.</p>
+<h2>Latex: The big picture</h2>
+
+<p>Documents in latex are written in plain text documents using a markup language.</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>[First example] [] (01-01-example.tex)</span> <a href='/downloads/code/01-01-example.tex'>download</a></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+</pre></td><td class='code'><pre><code class='latex'><span class='line'><span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">\title</span><span class="nb">{</span>First example<span class="nb">}</span>
+</span><span class='line'><span class="k">\author</span><span class="nb">{</span>Anon Ymous<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">\maketitle</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">\section</span><span class="nb">{</span>first section<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at dolor
+</span><span class='line'>nibh, eget tempus neque. Vestibulum ante ipsum primis in faucibus orci luctus
+</span><span class='line'>et ultrices posuere cubilia Curae; Cras sapien arcu, aliquam ac auctor ac,
+</span><span class='line'>venenatis vel lectus. Donec posuere mauris eget dui malesuada eu tristique
+</span><span class='line'>neque ultricies. Nam est augue, interdum et iaculis nec, vestibulum sed augue.
+</span><span class='line'>Sed eget enim orci.
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="k">\subsection</span><span class="nb">{</span>first subsection<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'>Nam ultricies tellus in nunc dignissim tincidunt feugiat diam sodales. Nullam a
+</span><span class='line'>justo libero, ac pellentesque lectus. Curabitur sit amet venenatis ipsum.
+</span><span class='line'>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
+</span><span class='line'>turpis egestas.
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="k">\section</span><span class="nb">{</span>second section<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'>In suscipit, metus sed malesuada molestie, dui nibh tristique elit, vitae
+</span><span class='line'>suscipit diam turpis id enim. Pellentesque habitant morbi tristique senectus et
+</span><span class='line'>netus et malesuada fames ac turpis egestas. Nulla facilisi. Morbi scelerisque
+</span><span class='line'>dapibus dictum. Cras quis nulla vel erat tempor sollicitudin.
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="k">\subsection</span><span class="nb">{</span>first subsection of second section<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'>Vestibulum aliquam lectus hendrerit urna mattis pellentesque. Cras dignissim
+</span><span class='line'>egestas sem, ac pulvinar neque venenatis ac. Lorem ipsum dolor sit amet,
+</span><span class='line'>consectetur adipiscing elit. Vestibulum nibh lorem, tincidunt quis varius ac,
+</span><span class='line'>commodo vitae nibh. Fusce vulputate diam id urna egestas et mattis urna mattis.
+</span><span class='line'>Praesent risus felis, tristique at ullamcorper nec, fringilla et sapien.
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="k">\subsection</span><span class="nb">{</span>first subsection of second section<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'>Fusce eros mi, accumsan at dapibus vel, rutrum at nulla. Etiam sit amet magna felis. Suspendisse potenti. Phasellus velit dui, posuere sed fermentum at, fermentum quis est. Maecenas diam neque, interdum at lobortis vel, porttitor at massa.
+</span><span class='line'>
+</span><span class='line'><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p><a href="/downloads/code/01-01-example.pdf">Download</a> the pdf version of this document
+to see the result.</p>
+
+<p>Looking now at the source document, you'll notice it consists of 2 parts:</p>
+
+<ul>
+<li>The preamble contains the document class to use (article in this example)
+and metadata, like the document title and author we defined.</li>
+<li>The document content, which is everything between <code>\begin{document}</code> and
+<code>\end{document}</code>.</li>
+</ul>
+
+
+<p>The document content itself is made up of several sections, and subsections,
+themselves made up of several paragraphs and structures.</p>
+
+<p>In latex, your focus is your documents structure, and the presentational aspect
+is taken care of for you. This brings us to discuss what <em>space</em> is in Latex.</p>
+
+<p><em>Whitespace</em> characters, such as blank or tab, are treated as <em>space</em> by LaTeX.
+Several consecutive whitespace characters are treated as one <em>space</em>.
+Whitespace at the start of a line is generally ignored, and a single line
+break is treated as <em>whitespace</em>.</p>
+
+<p>You'll notice that for latex, a paragraph is a sequence of non-blank lines, and
+a new paragraph begins right after a blank line: An empty line between two
+lines of text defines the end of a paragraph.</p>
+
+<p>Paragraph formatting is taken care of by latex, and that include the
+hyphenation of text. If you look at the source, you'll notice that latex
+doesn't necessarily break lines where there is a line break in the source
+document. For example take a look at the last paragraph: It was written on one
+line in the source document, and yet latex formats it beautifuly in the pdf.</p>
+
+<p>Several empty lines are treated the same as one empty line.</p>
+
+<h2>Latex: Not so Simple</h2>
+
+<p>Let's take a look at another type (or class) of documents.</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>[Second example] [] (01-02-example.tex)</span> <a href='/downloads/code/01-02-example.tex'>download</a></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+</pre></td><td class='code'><pre><code class='latex'><span class='line'><span class="k">\documentclass</span><span class="na">[a4paper]</span><span class="nb">{</span>book<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">\usepackage</span><span class="na">[utf8]</span><span class="nb">{</span>inputenc<span class="nb">}</span>
+</span><span class='line'><span class="k">\usepackage</span><span class="na">[T1]</span><span class="nb">{</span>fontenc<span class="nb">}</span>
+</span><span class='line'><span class="k">\usepackage</span><span class="na">[ngerman]</span><span class="nb">{</span>babel<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">\author</span><span class="nb">{</span>Mickey Mouse<span class="nb">}</span>
+</span><span class='line'><span class="k">\date</span><span class="nb">{</span><span class="k">\today</span><span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">\title</span><span class="nb">{</span>second example<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">\maketitle</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">\tableofcontents</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">\chapter</span><span class="nb">{</span>first section<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at dolor
+</span><span class='line'>nibh, eget tempus neque. Vestibulum ante ipsum primis in faucibus orci luctus
+</span><span class='line'>et ultrices posuere cubilia Curae; Cras sapien arcu, aliquam ac auctor ac,
+</span><span class='line'>venenatis vel lectus. Donec posuere mauris eget dui malesuada eu tristique
+</span><span class='line'>neque ultricies. Nam est augue, interdum et iaculis nec, vestibulum sed augue.
+</span><span class='line'>Sed eget enim orci.
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="k">\section</span><span class="nb">{</span>first subsection<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'>Nam ultricies tellus in nunc dignissim tincidunt feugiat diam sodales. Nullam a
+</span><span class='line'>justo libero, ac pellentesque lectus. Curabitur sit amet venenatis ipsum.
+</span><span class='line'>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
+</span><span class='line'>turpis egestas.
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="k">\chapter</span><span class="nb">{</span>second section<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'>In suscipit, metus sed malesuada molestie, dui nibh tristique elit, vitae
+</span><span class='line'>suscipit diam turpis id enim. Pellentesque habitant morbi tristique senectus et
+</span><span class='line'>netus et malesuada fames ac turpis egestas. Nulla facilisi. Morbi scelerisque
+</span><span class='line'>dapibus dictum. Cras quis nulla vel erat tempor sollicitudin.
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="k">\section</span><span class="nb">{</span>first subsection of second section<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'>Vestibulum aliquam lectus hendrerit urna mattis pellentesque. Cras dignissim
+</span><span class='line'>egestas sem, ac pulvinar neque venenatis ac. Lorem ipsum dolor sit amet,
+</span><span class='line'>consectetur adipiscing elit. Vestibulum nibh lorem, tincidunt quis varius ac,
+</span><span class='line'>commodo vitae nibh. Fusce vulputate diam id urna egestas et mattis urna mattis.
+</span><span class='line'>Praesent risus felis, tristique at ullamcorper nec, fringilla et sapien.
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="k">\section</span><span class="nb">{</span>first subsection of second section<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'>Fusce eros mi, accumsan at dapibus vel, rutrum at nulla. Etiam sit amet magna
+</span><span class='line'>felis. Suspendisse potenti. Phasellus velit dui, posuere sed fermentum at,
+</span><span class='line'>fermentum quis est. Maecenas diam neque, interdum at lobortis vel, porttitor
+</span><span class='line'>at massa.
+</span><span class='line'>
+</span><span class='line'><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p><a href="/downloads/code/01-02-example.pdf">Download</a> the pdf version of this document
+to see the result.</p>
+
+<p>As you can see, this example is a bit more elaborate, and will allow us to
+introduce <strong>latex commands</strong>, <strong>latex packages</strong>, and the <strong>latex table of
+content</strong>.</p>
+
+<h3>Commands</h3>
+
+<p>More to come.</p>
+
+<h3>Packages</h3>
+
+<p>If latex's default behavior, and processing isn't suitable for you, it's
+possible for you to customize it through some changes. When those changes are
+frequently useful, you can move those changes into what latex calls packages.
+That helps keeping your documents uncluttered with changes not related to the
+content.</p>
+
+<p>This simplifies the process of distributing those changes so that others having
+the same need won't have to go through the trouble you already went through.
+All they have to do is download your package, and then use the package.</p>
+
+<p>This works in the other direction too: if you have a need, and somebody already published a package for it, you can grab it and use it.
+This is what we do in this document's preamble with the three <code>\usepackage</code>
+latex commands.</p>
+
+<p>The first 2 setup the font and text encoding. You'll want to have them in every
+document you write.</p>
+
+<p>The third command asks latex to use the package <em>babel</em> which is used to tell
+latex in which language the document will be.</p>
+
+<h2>Templates</h2>
+
+<p>In other programs like word, you create a document template that fits your need
+in order to create the same document style over and over. In latex, that's a
+matter of writing a preamble and some document elements to a text file, that
+you'll simple copy and use.</p>
+
+<h2>Installing MikTex on windows:</h2>
+
+<h2>Installing texlive on Ubuntu:</h2>
 ]]></content>
   </entry>
   
