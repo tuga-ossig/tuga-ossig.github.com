@@ -1,0 +1,100 @@
+\documentclass[a4paper]{report}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+
+\author{Mickey Mouse}
+\date{}
+
+\title{third example}
+
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\chapter{first section}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at dolor
+nibh, eget tempus neque.
+
+
+\section{first section}
+
+\subsection{Different kinds of lists}
+
+In latex there are three kinds of lists, we'll have a look at all three types.
+
+An unordered list in latex is created with the \textbf{itemize} environment:
+
+\begin{itemize}
+    \item First item
+    \item Second item
+    \item Third item
+\end{itemize}
+
+
+An ordered list in latex is created with the \textbf{enumerate} environment:
+
+\begin{enumerate}
+    \item First item
+    \item Second item
+    \item Third item
+\end{enumerate}
+
+
+A definition list in latex is created with the \textbf{description} environment:
+
+\begin{description}
+    \item[First] First item
+    \item[Second] Second item
+    \item[Third] Third item
+\end{description}
+
+In the next section we'll see the different types of lists can also be nested
+in different ways.
+
+
+\subsection{Nested lists}
+
+\begin{enumerate}
+    \item First item
+    \item First level nested list
+    \begin{itemize}
+        \item First item of second level list
+        \item Second level nested list
+        \begin{description}
+            \item[First] First item
+            \item[second] Second item
+        \end{description}
+        \item Third item
+    \end{itemize}
+    \item last item in list
+\end{enumerate}
+
+
+\chapter{second section}
+
+In suscipit, metus sed malesuada molestie, dui nibh tristique elit, vitae
+suscipit diam turpis id enim.
+
+
+\section{first section of second chapter}
+
+\begin{verbatim}
+Vestibulum   aliquam            lectus       hendrerit urna mattis pellentesque. Cras dignissim
+egestas sem, ac pulvinar neque
+venenatis ac.
+
+
+\section{first section of second chapter}
+
+\end{verbatim}
+
+Fusce eros mi, accumsan at dapibus vel, rutrum at nulla. Etiam sit amet magna
+felis.
+
+\end{document}
