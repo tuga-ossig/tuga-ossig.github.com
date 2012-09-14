@@ -4,7 +4,9 @@
 \usepackage[T1]{fontenc}
 \usepackage[ngerman]{babel}
 
-\author{Mickey Mouse}
+\usepackage{hyperref}
+
+\author{Anon Ymous}
 \date{}
 
 \title{third example}
@@ -18,15 +20,59 @@
 
 \chapter{first section}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at dolor
-nibh, eget tempus neque.
+\section{Document}
+
+\subsection{The document's class}
+
+The first example we saw was an \textit{article}, the second was a
+\textit{book}, and this example is a \textit{report}.
+Different document classes get rendered differently.
+
+There is a very good explanation of the major document classes in the LaTeX
+wikibook at \url{http://en.wikibooks.org/wiki/LaTeX/Basics#Document_Classes}.
+
+One this to keep in mind though, is that different document classes have
+different document structures, i.e. sectioning commands, check
+\url{http://en.wikibooks.org/wiki/LaTeX/Document_Structure#Sectioning_Commands}
+for more information.
+
+For example, you cannot have chapters in articles, because it doesn't make
+sense there semantically speaking.
 
 
-\section{first section}
+\subsection{The document's date}
 
-\subsection{Different kinds of lists}
+In the first two examples, a date is rendered on the title page. The first
+example however doesn't have an explicit date command in the
+\textbf{top matter}.
+By default the date is set to the \verb`\today` command's value, which is
+today's date.
+
+There is however a difference between the first and second example, and that is
+the date's format. The culprit here is the \textit{babel} package which also
+changes the date's format so that it conforms with the document's language.
+
+Nevertheless, there comes a time where you don't want a date on your document
+and that can be accomplish by defining a date without any parameters, like in
+this example.
+
+
+\section{Internet links}
+
+Looking at the preamble of this document, you'll see we use a new package
+\textit{hyperref}. This allows us to insert all sorts of links into our
+document. For now we'll only use the \verb`\url` command. It allows you to
+insert the link to a web resource in text. Clicking it will launch it in your
+default browser.
+
+
+\chapter{Give me some lists!}
+
+\section{Different kinds of lists}
 
 In latex there are three kinds of lists, we'll have a look at all three types.
+
+\subsection{Itemize}
 
 An unordered list in latex is created with the \textbf{itemize} environment:
 
@@ -36,6 +82,12 @@ An unordered list in latex is created with the \textbf{itemize} environment:
     \item Third item
 \end{itemize}
 
+An unordered list in latex is created with the \textbf{itemize} environment.
+The \textbf{itemize} environment is semantically suitable for lists of items
+for which the order is not important.
+
+
+\subsection{Enumerate}
 
 An ordered list in latex is created with the \textbf{enumerate} environment:
 
@@ -45,6 +97,12 @@ An ordered list in latex is created with the \textbf{enumerate} environment:
     \item Third item
 \end{enumerate}
 
+An ordered list in latex is created with the \textbf{enumerate} environment.
+The \textbf{enumerate} environment is semantically suitable for lists of items
+for which the order is important.
+
+
+\subsection{Descriptions}
 
 A definition list in latex is created with the \textbf{description} environment:
 
@@ -54,11 +112,16 @@ A definition list in latex is created with the \textbf{description} environment:
     \item[Third] Third item
 \end{description}
 
-In the next section we'll see the different types of lists can also be nested
-in different ways.
+A definition list in latex is created with the \textbf{description} environment.
+The \textbf{description} environment is semantically suitable for lists of
+pairs made of terms to be described or defined, and their description or
+definition.
 
 
-\subsection{Nested lists}
+\section{Nested lists}
+
+In LaTeX you can insert a list environment into an existing one (up to a depth
+of four). Different types of lists can be nested at different levels.
 
 \begin{enumerate}
     \item First item
@@ -75,26 +138,5 @@ in different ways.
     \item last item in list
 \end{enumerate}
 
-
-\chapter{second section}
-
-In suscipit, metus sed malesuada molestie, dui nibh tristique elit, vitae
-suscipit diam turpis id enim.
-
-
-\section{first section of second chapter}
-
-\begin{verbatim}
-Vestibulum   aliquam            lectus       hendrerit urna mattis pellentesque. Cras dignissim
-egestas sem, ac pulvinar neque
-venenatis ac.
-
-
-\section{first section of second chapter}
-
-\end{verbatim}
-
-Fusce eros mi, accumsan at dapibus vel, rutrum at nulla. Etiam sit amet magna
-felis.
 
 \end{document}

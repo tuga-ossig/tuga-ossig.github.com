@@ -7,43 +7,88 @@
 
 \maketitle
 
-\section{first section}
+\section{Structure}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at dolor
-nibh, eget tempus neque. Vestibulum ante ipsum primis in faucibus orci luctus
-et ultrices posuere cubilia Curae; Cras sapien arcu, aliquam ac auctor ac,
-venenatis vel lectus. Donec posuere mauris eget dui malesuada eu tristique
-neque ultricies. Nam est augue, interdum et iaculis nec, vestibulum sed augue.
-Sed eget enim orci.
+\subsection{Document structure}
+
+Looking now at the source document, you'll notice it consists of 2 parts:
+
+\begin{itemize}
+    \item The preamble contains the document class to use (article in this
+    example) and metadata, like the document title and author we defined.
+    \item The document content, which is everything between
+    \verb`\begin{document}` and \verb`end{document}`.
+\end{itemize}
+
+The document content itself is made up of several sections, and subsections,
+themselves made up of several paragraphs and structures.
 
 
-\subsection{first subsection}
+\subsection{Whitespace}
 
-Nam ultricies tellus in nunc dignissim tincidunt feugiat diam sodales. Nullam a
-justo libero, ac pellentesque lectus. Curabitur sit amet venenatis ipsum.
-Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
-turpis egestas.
+In latex, your focus is your documents structure, and the presentational aspect
+is taken care of for you. This brings us to discuss what \textit{space} is in
+latex.
+
+\textit{Whitespace} characters, such as blank or tab, are treated as
+\textit{space} by latex.
+Several consecutive whitespace characters are treated as one \textit{space}.
+Whitespace at the start of a line is generally ignored, and a single line
+break is treated as \textit{whitespace}.
+
+You'll notice that for latex, a paragraph is a sequence of non-blank lines, and
+a new paragraph begins right after a blank line: An empty line between two
+lines of text defines the end of a paragraph.
+
+Paragraph formatting is taken care of by latex, and that include the
+hyphenation of text. If you look at the source, you'll notice that latex
+doesn't necessarily break lines where there is a line break in the source
+document. For example take a look at the last paragraph: It was written on one
+line in the source document, and yet latex formats it beautifully in the pdf.
+
+Several empty lines are treated the same as one empty line.
 
 
 \section{second section}
 
-In suscipit, metus sed malesuada molestie, dui nibh tristique elit, vitae
-suscipit diam turpis id enim. Pellentesque habitant morbi tristique senectus et
-netus et malesuada fames ac turpis egestas. Nulla facilisi. Morbi scelerisque
-dapibus dictum. Cras quis nulla vel erat tempor sollicitudin.
+\subsection{Verbatim environment}
 
+If you want to introduce text that won't be interpreted by the compiler, you
+can use the verbatim environment. Everything written in that environment is
+processed as if by a typewriter:
 
-\subsection{first subsection of second section}
+\begin{itemize}
+    \item All spaces and line breaks are reproduced verbatim, and the text is
+    displayed in a monospace font.
+    \item Any latex command in the verbatim environment will be ignored and
+    handled as plain text. The reason is that once in the verbatim environment,
+    the only command that will be recognized is \verb`\end{verbatim}`.
+\end{itemize}
 
-Vestibulum aliquam lectus hendrerit urna mattis pellentesque. Cras dignissim
-egestas sem, ac pulvinar neque venenatis ac. Lorem ipsum dolor sit amet,
-consectetur adipiscing elit. Vestibulum nibh lorem, tincidunt quis varius ac,
-commodo vitae nibh. Fusce vulputate diam id urna egestas et mattis urna mattis.
-Praesent risus felis, tristique at ullamcorper nec, fringilla et sapien.
+If you want to introduce a short inline verbatim text, you can use the 
+\verb`\verb` command:
 
+\verb+raw   text+
 
-\subsection{first subsection of second section}
+Following the \verb`\verb` command, the text must be enclosed in delimiters,
+like the ``+" we used here. The delimiter can be any character you like
+except *. This will print verbatim all the text within the delimiters.
 
-Fusce eros mi, accumsan at dapibus vel, rutrum at nulla. Etiam sit amet magna felis. Suspendisse potenti. Phasellus velit dui, posuere sed fermentum at, fermentum quis est. Maecenas diam neque, interdum at lobortis vel, porttitor at massa.
+For example, the code:
+
+\verb|\textbf{This is  printed   verbatim    !}|
+
+And for the verbatim environment:
+
+\begin{verbatim}
+\subsection{Second subsection of second section}
+Vestibulum   aliquam            lectus       hendrerit urna mattis pellentesque. Cras dignissim
+egestas sem, ac pulvinar neque
+venenatis ac.
+\end{verbatim}
+
+\subsection{Third subsection of second section}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at dolor nibh, eget tempus neque. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras sapien arcu, aliquam ac auctor ac, venenatis vel lectus. Donec posuere mauris eget dui malesuada eu tristique neque ultricies.
 
 \end{document}

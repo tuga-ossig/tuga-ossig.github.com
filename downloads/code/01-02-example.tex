@@ -15,47 +15,75 @@
 \tableofcontents
 
 
-\chapter{first chapter}
+\chapter{Not so Simple}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at dolor
-nibh, eget tempus neque. Vestibulum ante ipsum primis in faucibus orci luctus
-et ultrices posuere cubilia Curae; Cras sapien arcu, aliquam ac auctor ac,
-venenatis vel lectus. Donec posuere mauris eget dui malesuada eu tristique
-neque ultricies. Nam est augue, interdum et iaculis nec, vestibulum sed augue.
-Sed eget enim orci.
+As you can see, this example is a bit more elaborate, and will allow us to
+introduce \textbf{latex commands}, \textbf{latex packages}, and the
+\textbf{latex table of content}.
 
 
-\section{first section}
+\section{Commands and Parameters}
 
-Nam ultricies tellus in nunc dignissim tincidunt feugiat diam sodales. Nullam a
-justo libero, ac pellentesque lectus. Curabitur sit amet venenatis ipsum.
-Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
-turpis egestas.
+Latex commands are introduced by a backslash, and possibly have parameters,
+which might be enclosed in curly braces.
+
+Some commands come in pairs, with a beginning command, the corresponding ending
+command, and the content encapsulated in between.
+
+Following \verb`\commandname`, there may be one or more parameters. Optional
+parameters are enclosed in square brackets. Required parameters are enclosed
+in curly braces.
+
+So the structure of a command in latex looks like this:\\
+\verb`\commandname[option1, option2]{parameter1, parameter2}`
+
+\verb`\documentclass` is a command too, and as you can see, here we define the
+optional paper size to be A4.
+
+
+\section{Packages}
+
+If latex's default behavior, and processing isn't suitable for you, it's
+possible for you to customize it through some changes. When those changes are
+frequently useful, you can move those changes into what latex calls packages.
+That helps keeping your documents uncluttered with changes not related to the
+content.
+
+This simplifies the process of distributing those changes so that others having
+the same need won't have to go through the trouble you already went through.
+All they have to do is download your package, and then use the package.
+
+This works in the other direction too: if you have a need, and somebody already
+published a package for it, you can grab it and use it.
+This is what we do in this document's preamble with the three \verb`\usepackage`
+latex commands.
+
+The first 2 setup the font and text encoding. You'll want to have them in every
+document you write.
+
+The third command asks latex to use the package \textit{babel} with the option
+\textit{ngerman}.
+It is used to tell latex in which language the document will be, here
+\textit{ngerman} means new German. The language setting defines certain things
+for you.
+The \verb`\chapter` command for instance, renders as \textit{Kapitel}, and the
+\verb`\tableofcontents` as \textit{Inhaltsverzeichnis}.
 
 
 \chapter{second chapter}
 
-In suscipit, metus sed malesuada molestie, dui nibh tristique elit, vitae
-suscipit diam turpis id enim. Pellentesque habitant morbi tristique senectus et
-netus et malesuada fames ac turpis egestas. Nulla facilisi. Morbi scelerisque
-dapibus dictum. Cras quis nulla vel erat tempor sollicitudin.
 
+\section{Document title and Table of contents}
 
-\section{first section of second chapter}
+The command \verb`\maketitle` generates a title page for you from the document
+metadata, also called \textbf{top matter} in \LaTeX.
 
-Vestibulum aliquam lectus hendrerit urna mattis pellentesque. Cras dignissim
-egestas sem, ac pulvinar neque venenatis ac. Lorem ipsum dolor sit amet,
-consectetur adipiscing elit. Vestibulum nibh lorem, tincidunt quis varius ac,
-commodo vitae nibh. Fusce vulputate diam id urna egestas et mattis urna mattis.
-Praesent risus felis, tristique at ullamcorper nec, fringilla et sapien.
+It's inserted for you in the resulting document right where the command is
+called in the source document.
 
-
-\section{first section of second chapter}
-
-Fusce eros mi, accumsan at dapibus vel, rutrum at nulla. Etiam sit amet magna
-felis. Suspendisse potenti. Phasellus velit dui, posuere sed fermentum at,
-fermentum quis est. Maecenas diam neque, interdum at lobortis vel, porttitor
-at massa.
+\verb`\tableofcontents` generates a table of contents for you from all the
+headers in the document, and inserts it for you in the resulting document right
+where the command is called in the source document.
 
 
 \end{document}

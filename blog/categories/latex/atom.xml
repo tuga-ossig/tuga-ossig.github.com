@@ -4,7 +4,7 @@
   <title><![CDATA[Category: latex | TUGA OSSIG]]></title>
   <link href="http://tuga-ossig.github.com/blog/categories/latex/atom.xml" rel="self"/>
   <link href="http://tuga-ossig.github.com/"/>
-  <updated>2012-09-13T22:07:06+02:00</updated>
+  <updated>2012-09-14T17:13:38+02:00</updated>
   <id>http://tuga-ossig.github.com/</id>
   <author>
     <name><![CDATA[Joe R. Nassimian]]></name>
@@ -103,6 +103,51 @@ program, used by technical book publishers like Springer.</li>
 <span class='line-number'>47</span>
 <span class='line-number'>48</span>
 <span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+<span class='line-number'>65</span>
+<span class='line-number'>66</span>
+<span class='line-number'>67</span>
+<span class='line-number'>68</span>
+<span class='line-number'>69</span>
+<span class='line-number'>70</span>
+<span class='line-number'>71</span>
+<span class='line-number'>72</span>
+<span class='line-number'>73</span>
+<span class='line-number'>74</span>
+<span class='line-number'>75</span>
+<span class='line-number'>76</span>
+<span class='line-number'>77</span>
+<span class='line-number'>78</span>
+<span class='line-number'>79</span>
+<span class='line-number'>80</span>
+<span class='line-number'>81</span>
+<span class='line-number'>82</span>
+<span class='line-number'>83</span>
+<span class='line-number'>84</span>
+<span class='line-number'>85</span>
+<span class='line-number'>86</span>
+<span class='line-number'>87</span>
+<span class='line-number'>88</span>
+<span class='line-number'>89</span>
+<span class='line-number'>90</span>
+<span class='line-number'>91</span>
+<span class='line-number'>92</span>
+<span class='line-number'>93</span>
+<span class='line-number'>94</span>
 </pre></td><td class='code'><pre><code class='latex'><span class='line'><span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
 </span><span class='line'>
 </span><span class='line'><span class="k">\title</span><span class="nb">{</span>First example<span class="nb">}</span>
@@ -112,87 +157,95 @@ program, used by technical book publishers like Springer.</li>
 </span><span class='line'>
 </span><span class='line'><span class="k">\maketitle</span>
 </span><span class='line'>
-</span><span class='line'><span class="k">\section</span><span class="nb">{</span>first section<span class="nb">}</span>
+</span><span class='line'><span class="k">\section</span><span class="nb">{</span>Structure<span class="nb">}</span>
 </span><span class='line'>
-</span><span class='line'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at dolor
-</span><span class='line'>nibh, eget tempus neque. Vestibulum ante ipsum primis in faucibus orci luctus
-</span><span class='line'>et ultrices posuere cubilia Curae; Cras sapien arcu, aliquam ac auctor ac,
-</span><span class='line'>venenatis vel lectus. Donec posuere mauris eget dui malesuada eu tristique
-</span><span class='line'>neque ultricies. Nam est augue, interdum et iaculis nec, vestibulum sed augue.
-</span><span class='line'>Sed eget enim orci.
+</span><span class='line'><span class="k">\subsection</span><span class="nb">{</span>Document structure<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'>Looking now at the source document, you&#39;ll notice it consists of 2 parts:
+</span><span class='line'>
+</span><span class='line'><span class="k">\begin</span><span class="nb">{</span>itemize<span class="nb">}</span>
+</span><span class='line'>    <span class="k">\item</span> The preamble contains the document class to use (article in this
+</span><span class='line'>    example) and metadata, like the document title and author we defined.
+</span><span class='line'>    <span class="k">\item</span> The document content, which is everything between
+</span><span class='line'>    <span class="k">\verb</span>`<span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>` and <span class="k">\verb</span>`end<span class="nb">{</span>document<span class="nb">}</span>`.
+</span><span class='line'><span class="k">\end</span><span class="nb">{</span>itemize<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'>The document content itself is made up of several sections, and subsections,
+</span><span class='line'>themselves made up of several paragraphs and structures.
 </span><span class='line'>
 </span><span class='line'>
-</span><span class='line'><span class="k">\subsection</span><span class="nb">{</span>first subsection<span class="nb">}</span>
+</span><span class='line'><span class="k">\subsection</span><span class="nb">{</span>Whitespace<span class="nb">}</span>
 </span><span class='line'>
-</span><span class='line'>Nam ultricies tellus in nunc dignissim tincidunt feugiat diam sodales. Nullam a
-</span><span class='line'>justo libero, ac pellentesque lectus. Curabitur sit amet venenatis ipsum.
-</span><span class='line'>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
-</span><span class='line'>turpis egestas.
+</span><span class='line'>In latex, your focus is your documents structure, and the presentational aspect
+</span><span class='line'>is taken care of for you. This brings us to discuss what <span class="k">\textit</span><span class="nb">{</span>space<span class="nb">}</span> is in
+</span><span class='line'>latex.
+</span><span class='line'>
+</span><span class='line'><span class="k">\textit</span><span class="nb">{</span>Whitespace<span class="nb">}</span> characters, such as blank or tab, are treated as
+</span><span class='line'><span class="k">\textit</span><span class="nb">{</span>space<span class="nb">}</span> by latex.
+</span><span class='line'>Several consecutive whitespace characters are treated as one <span class="k">\textit</span><span class="nb">{</span>space<span class="nb">}</span>.
+</span><span class='line'>Whitespace at the start of a line is generally ignored, and a single line
+</span><span class='line'>break is treated as <span class="k">\textit</span><span class="nb">{</span>whitespace<span class="nb">}</span>.
+</span><span class='line'>
+</span><span class='line'>You&#39;ll notice that for latex, a paragraph is a sequence of non-blank lines, and
+</span><span class='line'>a new paragraph begins right after a blank line: An empty line between two
+</span><span class='line'>lines of text defines the end of a paragraph.
+</span><span class='line'>
+</span><span class='line'>Paragraph formatting is taken care of by latex, and that include the
+</span><span class='line'>hyphenation of text. If you look at the source, you&#39;ll notice that latex
+</span><span class='line'>doesn&#39;t necessarily break lines where there is a line break in the source
+</span><span class='line'>document. For example take a look at the last paragraph: It was written on one
+</span><span class='line'>line in the source document, and yet latex formats it beautifully in the pdf.
+</span><span class='line'>
+</span><span class='line'>Several empty lines are treated the same as one empty line.
 </span><span class='line'>
 </span><span class='line'>
 </span><span class='line'><span class="k">\section</span><span class="nb">{</span>second section<span class="nb">}</span>
 </span><span class='line'>
-</span><span class='line'>In suscipit, metus sed malesuada molestie, dui nibh tristique elit, vitae
-</span><span class='line'>suscipit diam turpis id enim. Pellentesque habitant morbi tristique senectus et
-</span><span class='line'>netus et malesuada fames ac turpis egestas. Nulla facilisi. Morbi scelerisque
-</span><span class='line'>dapibus dictum. Cras quis nulla vel erat tempor sollicitudin.
+</span><span class='line'><span class="k">\subsection</span><span class="nb">{</span>Verbatim environment<span class="nb">}</span>
 </span><span class='line'>
+</span><span class='line'>If you want to introduce text that won&#39;t be interpreted by the compiler, you
+</span><span class='line'>can use the verbatim environment. Everything written in that environment is
+</span><span class='line'>processed as if by a typewriter:
 </span><span class='line'>
-</span><span class='line'><span class="k">\subsection</span><span class="nb">{</span>first subsection of second section<span class="nb">}</span>
+</span><span class='line'><span class="k">\begin</span><span class="nb">{</span>itemize<span class="nb">}</span>
+</span><span class='line'>    <span class="k">\item</span> All spaces and line breaks are reproduced verbatim, and the text is
+</span><span class='line'>    displayed in a monospace font.
+</span><span class='line'>    <span class="k">\item</span> Any latex command in the verbatim environment will be ignored and
+</span><span class='line'>    handled as plain text. The reason is that once in the verbatim environment,
+</span><span class='line'>    the only command that will be recognized is <span class="k">\verb</span>`<span class="k">\end</span><span class="nb">{</span>verbatim<span class="nb">}</span>`.
+</span><span class='line'><span class="k">\end</span><span class="nb">{</span>itemize<span class="nb">}</span>
 </span><span class='line'>
-</span><span class='line'>Vestibulum aliquam lectus hendrerit urna mattis pellentesque. Cras dignissim
-</span><span class='line'>egestas sem, ac pulvinar neque venenatis ac. Lorem ipsum dolor sit amet,
-</span><span class='line'>consectetur adipiscing elit. Vestibulum nibh lorem, tincidunt quis varius ac,
-</span><span class='line'>commodo vitae nibh. Fusce vulputate diam id urna egestas et mattis urna mattis.
-</span><span class='line'>Praesent risus felis, tristique at ullamcorper nec, fringilla et sapien.
+</span><span class='line'>If you want to introduce a short inline verbatim text, you can use the
+</span><span class='line'><span class="k">\verb</span>`<span class="k">\verb</span>` command:
 </span><span class='line'>
+</span><span class='line'><span class="k">\verb</span>+raw   text+
 </span><span class='line'>
-</span><span class='line'><span class="k">\subsection</span><span class="nb">{</span>first subsection of second section<span class="nb">}</span>
+</span><span class='line'>Following the <span class="k">\verb</span>`<span class="k">\verb</span>` command, the text must be enclosed in delimiters,
+</span><span class='line'>like the ``+&quot; we used here. The delimiter can be any character you like
+</span><span class='line'>except *. This will print verbatim all the text within the delimiters.
 </span><span class='line'>
-</span><span class='line'>Fusce eros mi, accumsan at dapibus vel, rutrum at nulla. Etiam sit amet magna felis. Suspendisse potenti. Phasellus velit dui, posuere sed fermentum at, fermentum quis est. Maecenas diam neque, interdum at lobortis vel, porttitor at massa.
+</span><span class='line'>For example, the code:
+</span><span class='line'>
+</span><span class='line'><span class="k">\verb</span>|<span class="k">\textbf</span><span class="nb">{</span>This is  printed   verbatim    !<span class="nb">}</span>|
+</span><span class='line'>
+</span><span class='line'>And for the verbatim environment:
+</span><span class='line'>
+</span><span class='line'><span class="k">\begin</span><span class="nb">{</span>verbatim<span class="nb">}</span>
+</span><span class='line'><span class="k">\subsection</span><span class="nb">{</span>Second subsection of second section<span class="nb">}</span>
+</span><span class='line'>Vestibulum   aliquam            lectus       hendrerit urna mattis pellentesque. Cras dignissim
+</span><span class='line'>egestas sem, ac pulvinar neque
+</span><span class='line'>venenatis ac.
+</span><span class='line'><span class="k">\end</span><span class="nb">{</span>verbatim<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">\subsection</span><span class="nb">{</span>Third subsection of second section<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at dolor nibh, eget tempus neque. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras sapien arcu, aliquam ac auctor ac, venenatis vel lectus. Donec posuere mauris eget dui malesuada eu tristique neque ultricies.
 </span><span class='line'>
 </span><span class='line'><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p><a href="/downloads/code/01-01-example.pdf">Download</a> the pdf version of this document
 to see the result.</p>
-
-<h3>Structure</h3>
-
-<p>Looking now at the source document, you'll notice it consists of 2 parts:</p>
-
-<ul>
-<li>The preamble contains the document class to use (article in this example)
-and metadata, like the document title and author we defined.</li>
-<li>The document content, which is everything between <code>\begin{document}</code> and
-<code>\end{document}</code>.</li>
-</ul>
-
-
-<p>The document content itself is made up of several sections, and subsections,
-themselves made up of several paragraphs and structures.</p>
-
-<h3>Whitespace</h3>
-
-<p>In latex, your focus is your documents structure, and the presentational aspect
-is taken care of for you. This brings us to discuss what <em>space</em> is in Latex.</p>
-
-<p><em>Whitespace</em> characters, such as blank or tab, are treated as <em>space</em> by LaTeX.
-Several consecutive whitespace characters are treated as one <em>space</em>.
-Whitespace at the start of a line is generally ignored, and a single line
-break is treated as <em>whitespace</em>.</p>
-
-<p>You'll notice that for latex, a paragraph is a sequence of non-blank lines, and
-a new paragraph begins right after a blank line: An empty line between two
-lines of text defines the end of a paragraph.</p>
-
-<p>Paragraph formatting is taken care of by latex, and that include the
-hyphenation of text. If you look at the source, you'll notice that latex
-doesn't necessarily break lines where there is a line break in the source
-document. For example take a look at the last paragraph: It was written on one
-line in the source document, and yet latex formats it beautifully in the pdf.</p>
-
-<p>Several empty lines are treated the same as one empty line.</p>
 
 <h2>Latex: Not so Simple</h2>
 
@@ -260,6 +313,34 @@ line in the source document, and yet latex formats it beautifully in the pdf.</p
 <span class='line-number'>59</span>
 <span class='line-number'>60</span>
 <span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+<span class='line-number'>65</span>
+<span class='line-number'>66</span>
+<span class='line-number'>67</span>
+<span class='line-number'>68</span>
+<span class='line-number'>69</span>
+<span class='line-number'>70</span>
+<span class='line-number'>71</span>
+<span class='line-number'>72</span>
+<span class='line-number'>73</span>
+<span class='line-number'>74</span>
+<span class='line-number'>75</span>
+<span class='line-number'>76</span>
+<span class='line-number'>77</span>
+<span class='line-number'>78</span>
+<span class='line-number'>79</span>
+<span class='line-number'>80</span>
+<span class='line-number'>81</span>
+<span class='line-number'>82</span>
+<span class='line-number'>83</span>
+<span class='line-number'>84</span>
+<span class='line-number'>85</span>
+<span class='line-number'>86</span>
+<span class='line-number'>87</span>
+<span class='line-number'>88</span>
+<span class='line-number'>89</span>
 </pre></td><td class='code'><pre><code class='latex'><span class='line'><span class="k">\documentclass</span><span class="na">[a4paper]</span><span class="nb">{</span>book<span class="nb">}</span>
 </span><span class='line'>
 </span><span class='line'><span class="k">\usepackage</span><span class="na">[utf8]</span><span class="nb">{</span>inputenc<span class="nb">}</span>
@@ -277,47 +358,75 @@ line in the source document, and yet latex formats it beautifully in the pdf.</p
 </span><span class='line'><span class="k">\tableofcontents</span>
 </span><span class='line'>
 </span><span class='line'>
-</span><span class='line'><span class="k">\chapter</span><span class="nb">{</span>first chapter<span class="nb">}</span>
+</span><span class='line'><span class="k">\chapter</span><span class="nb">{</span>Not so Simple<span class="nb">}</span>
 </span><span class='line'>
-</span><span class='line'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at dolor
-</span><span class='line'>nibh, eget tempus neque. Vestibulum ante ipsum primis in faucibus orci luctus
-</span><span class='line'>et ultrices posuere cubilia Curae; Cras sapien arcu, aliquam ac auctor ac,
-</span><span class='line'>venenatis vel lectus. Donec posuere mauris eget dui malesuada eu tristique
-</span><span class='line'>neque ultricies. Nam est augue, interdum et iaculis nec, vestibulum sed augue.
-</span><span class='line'>Sed eget enim orci.
+</span><span class='line'>As you can see, this example is a bit more elaborate, and will allow us to
+</span><span class='line'>introduce <span class="k">\textbf</span><span class="nb">{</span>latex commands<span class="nb">}</span>, <span class="k">\textbf</span><span class="nb">{</span>latex packages<span class="nb">}</span>, and the
+</span><span class='line'><span class="k">\textbf</span><span class="nb">{</span>latex table of content<span class="nb">}</span>.
 </span><span class='line'>
 </span><span class='line'>
-</span><span class='line'><span class="k">\section</span><span class="nb">{</span>first section<span class="nb">}</span>
+</span><span class='line'><span class="k">\section</span><span class="nb">{</span>Commands and Parameters<span class="nb">}</span>
 </span><span class='line'>
-</span><span class='line'>Nam ultricies tellus in nunc dignissim tincidunt feugiat diam sodales. Nullam a
-</span><span class='line'>justo libero, ac pellentesque lectus. Curabitur sit amet venenatis ipsum.
-</span><span class='line'>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
-</span><span class='line'>turpis egestas.
+</span><span class='line'>Latex commands are introduced by a backslash, and possibly have parameters,
+</span><span class='line'>which might be enclosed in curly braces.
+</span><span class='line'>
+</span><span class='line'>Some commands come in pairs, with a beginning command, the corresponding ending
+</span><span class='line'>command, and the content encapsulated in between.
+</span><span class='line'>
+</span><span class='line'>Following <span class="k">\verb</span>`<span class="k">\commandname</span>`, there may be one or more parameters. Optional
+</span><span class='line'>parameters are enclosed in square brackets. Required parameters are enclosed
+</span><span class='line'>in curly braces.
+</span><span class='line'>
+</span><span class='line'>So the structure of a command in latex looks like this:<span class="k">\\</span>
+</span><span class='line'><span class="k">\verb</span>`<span class="k">\commandname</span><span class="na">[option1, option2]</span><span class="nb">{</span>parameter1, parameter2<span class="nb">}</span>`
+</span><span class='line'>
+</span><span class='line'><span class="k">\verb</span>`<span class="k">\documentclass</span>` is a command too, and as you can see, here we define the
+</span><span class='line'>optional paper size to be A4.
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="k">\section</span><span class="nb">{</span>Packages<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'>If latex&#39;s default behavior, and processing isn&#39;t suitable for you, it&#39;s
+</span><span class='line'>possible for you to customize it through some changes. When those changes are
+</span><span class='line'>frequently useful, you can move those changes into what latex calls packages.
+</span><span class='line'>That helps keeping your documents uncluttered with changes not related to the
+</span><span class='line'>content.
+</span><span class='line'>
+</span><span class='line'>This simplifies the process of distributing those changes so that others having
+</span><span class='line'>the same need won&#39;t have to go through the trouble you already went through.
+</span><span class='line'>All they have to do is download your package, and then use the package.
+</span><span class='line'>
+</span><span class='line'>This works in the other direction too: if you have a need, and somebody already
+</span><span class='line'>published a package for it, you can grab it and use it.
+</span><span class='line'>This is what we do in this document&#39;s preamble with the three <span class="k">\verb</span>`<span class="k">\usepackage</span>`
+</span><span class='line'>latex commands.
+</span><span class='line'>
+</span><span class='line'>The first 2 setup the font and text encoding. You&#39;ll want to have them in every
+</span><span class='line'>document you write.
+</span><span class='line'>
+</span><span class='line'>The third command asks latex to use the package <span class="k">\textit</span><span class="nb">{</span>babel<span class="nb">}</span> with the option
+</span><span class='line'><span class="k">\textit</span><span class="nb">{</span>ngerman<span class="nb">}</span>.
+</span><span class='line'>It is used to tell latex in which language the document will be, here
+</span><span class='line'><span class="k">\textit</span><span class="nb">{</span>ngerman<span class="nb">}</span> means new German. The language setting defines certain things
+</span><span class='line'>for you.
+</span><span class='line'>The <span class="k">\verb</span>`<span class="k">\chapter</span>` command for instance, renders as <span class="k">\textit</span><span class="nb">{</span>Kapitel<span class="nb">}</span>, and the
+</span><span class='line'><span class="k">\verb</span>`<span class="k">\tableofcontents</span>` as <span class="k">\textit</span><span class="nb">{</span>Inhaltsverzeichnis<span class="nb">}</span>.
 </span><span class='line'>
 </span><span class='line'>
 </span><span class='line'><span class="k">\chapter</span><span class="nb">{</span>second chapter<span class="nb">}</span>
 </span><span class='line'>
-</span><span class='line'>In suscipit, metus sed malesuada molestie, dui nibh tristique elit, vitae
-</span><span class='line'>suscipit diam turpis id enim. Pellentesque habitant morbi tristique senectus et
-</span><span class='line'>netus et malesuada fames ac turpis egestas. Nulla facilisi. Morbi scelerisque
-</span><span class='line'>dapibus dictum. Cras quis nulla vel erat tempor sollicitudin.
 </span><span class='line'>
+</span><span class='line'><span class="k">\section</span><span class="nb">{</span>Document title and Table of contents<span class="nb">}</span>
 </span><span class='line'>
-</span><span class='line'><span class="k">\section</span><span class="nb">{</span>first section of second chapter<span class="nb">}</span>
+</span><span class='line'>The command <span class="k">\verb</span>`<span class="k">\maketitle</span>` generates a title page for you from the document
+</span><span class='line'>metadata, also called <span class="k">\textbf</span><span class="nb">{</span>top matter<span class="nb">}</span> in <span class="k">\LaTeX</span>.
 </span><span class='line'>
-</span><span class='line'>Vestibulum aliquam lectus hendrerit urna mattis pellentesque. Cras dignissim
-</span><span class='line'>egestas sem, ac pulvinar neque venenatis ac. Lorem ipsum dolor sit amet,
-</span><span class='line'>consectetur adipiscing elit. Vestibulum nibh lorem, tincidunt quis varius ac,
-</span><span class='line'>commodo vitae nibh. Fusce vulputate diam id urna egestas et mattis urna mattis.
-</span><span class='line'>Praesent risus felis, tristique at ullamcorper nec, fringilla et sapien.
+</span><span class='line'>It&#39;s inserted for you in the resulting document right where the command is
+</span><span class='line'>called in the source document.
 </span><span class='line'>
-</span><span class='line'>
-</span><span class='line'><span class="k">\section</span><span class="nb">{</span>first section of second chapter<span class="nb">}</span>
-</span><span class='line'>
-</span><span class='line'>Fusce eros mi, accumsan at dapibus vel, rutrum at nulla. Etiam sit amet magna
-</span><span class='line'>felis. Suspendisse potenti. Phasellus velit dui, posuere sed fermentum at,
-</span><span class='line'>fermentum quis est. Maecenas diam neque, interdum at lobortis vel, porttitor
-</span><span class='line'>at massa.
+</span><span class='line'><span class="k">\verb</span>`<span class="k">\tableofcontents</span>` generates a table of contents for you from all the
+</span><span class='line'>headers in the document, and inserts it for you in the resulting document right
+</span><span class='line'>where the command is called in the source document.
 </span><span class='line'>
 </span><span class='line'>
 </span><span class='line'><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
@@ -325,66 +434,6 @@ line in the source document, and yet latex formats it beautifully in the pdf.</p
 
 <p><a href="/downloads/code/01-02-example.pdf">Download</a> the pdf version of this document
 to see the result.</p>
-
-<p>As you can see, this example is a bit more elaborate, and will allow us to
-introduce <strong>latex commands</strong>, <strong>latex packages</strong>, and the <strong>latex table of
-content</strong>.</p>
-
-<h3>Commands and Parameters</h3>
-
-<p>LaTeX commands are introduced by a backslash, and possibly have parameters,
-which might be enclosed in curly braces.</p>
-
-<p>Some commands come in pairs, with a beginning command, the corresponding ending
-command, and the content encapsulated in between.</p>
-
-<p>Following <code>\commandname</code>, there may be one or more parameters. Optional
-parameters are enclosed in square brackets. Required parameters are enclosed
-in curly braces.</p>
-
-<p>So the structure of a command in latex looks like this:
-<code>\commandname[option1, option2]{parameter1, parameter2}</code></p>
-
-<p><code>\documentclass</code> is a command too, and as you can see, here we define the
-optional paper size to be A4 used all over the world except in the USA.</p>
-
-<h3>Packages</h3>
-
-<p>If latex's default behavior, and processing isn't suitable for you, it's
-possible for you to customize it through some changes. When those changes are
-frequently useful, you can move those changes into what latex calls packages.
-That helps keeping your documents uncluttered with changes not related to the
-content.</p>
-
-<p>This simplifies the process of distributing those changes so that others having
-the same need won't have to go through the trouble you already went through.
-All they have to do is download your package, and then use the package.</p>
-
-<p>This works in the other direction too: if you have a need, and somebody already published a package for it, you can grab it and use it.
-This is what we do in this document's preamble with the three <code>\usepackage</code>
-latex commands.</p>
-
-<p>The first 2 setup the font and text encoding. You'll want to have them in every
-document you write.</p>
-
-<p>The third command asks latex to use the package <em>babel</em> with the option
-<em>ngerman</em>.
-It is used to tell latex in which language the document will be, here
-<em>ngerman</em> means new German. The language setting defines certain things for you.
-The <code>\chapter</code> command for instance, renders as <em>Kapitel</em>, and the
-<code>\tableofcontents</code> as <em>Inhaltsverzeichnis</em>.</p>
-
-<h3>Document title and Table of contents</h3>
-
-<p>The command <code>\maketitle</code> generates a title page for you from the document
-metadata, also called <strong>top matter</strong> in LaTeX.</p>
-
-<p>It's inserted for you in the resulting document right where the command is
-called in the source document.</p>
-
-<p><code>\tableofcontents</code> generates a table of contents for you from all the
-headers in the document, and inserts it for you in the resulting document right
-where the command is called in the source document.</p>
 
 <h2>Latex: Give me some lists</h2>
 
@@ -489,13 +538,57 @@ where the command is called in the source document.</p>
 <span class='line-number'>98</span>
 <span class='line-number'>99</span>
 <span class='line-number'>100</span>
+<span class='line-number'>101</span>
+<span class='line-number'>102</span>
+<span class='line-number'>103</span>
+<span class='line-number'>104</span>
+<span class='line-number'>105</span>
+<span class='line-number'>106</span>
+<span class='line-number'>107</span>
+<span class='line-number'>108</span>
+<span class='line-number'>109</span>
+<span class='line-number'>110</span>
+<span class='line-number'>111</span>
+<span class='line-number'>112</span>
+<span class='line-number'>113</span>
+<span class='line-number'>114</span>
+<span class='line-number'>115</span>
+<span class='line-number'>116</span>
+<span class='line-number'>117</span>
+<span class='line-number'>118</span>
+<span class='line-number'>119</span>
+<span class='line-number'>120</span>
+<span class='line-number'>121</span>
+<span class='line-number'>122</span>
+<span class='line-number'>123</span>
+<span class='line-number'>124</span>
+<span class='line-number'>125</span>
+<span class='line-number'>126</span>
+<span class='line-number'>127</span>
+<span class='line-number'>128</span>
+<span class='line-number'>129</span>
+<span class='line-number'>130</span>
+<span class='line-number'>131</span>
+<span class='line-number'>132</span>
+<span class='line-number'>133</span>
+<span class='line-number'>134</span>
+<span class='line-number'>135</span>
+<span class='line-number'>136</span>
+<span class='line-number'>137</span>
+<span class='line-number'>138</span>
+<span class='line-number'>139</span>
+<span class='line-number'>140</span>
+<span class='line-number'>141</span>
+<span class='line-number'>142</span>
 </pre></td><td class='code'><pre><code class='latex'><span class='line'><span class="k">\documentclass</span><span class="na">[a4paper]</span><span class="nb">{</span>report<span class="nb">}</span>
 </span><span class='line'>
 </span><span class='line'><span class="k">\usepackage</span><span class="na">[utf8]</span><span class="nb">{</span>inputenc<span class="nb">}</span>
 </span><span class='line'><span class="k">\usepackage</span><span class="na">[T1]</span><span class="nb">{</span>fontenc<span class="nb">}</span>
 </span><span class='line'><span class="k">\usepackage</span><span class="na">[ngerman]</span><span class="nb">{</span>babel<span class="nb">}</span>
 </span><span class='line'>
-</span><span class='line'><span class="k">\author</span><span class="nb">{</span>Mickey Mouse<span class="nb">}</span>
+</span><span class='line'><span class="k">\usepackage</span><span class="nb">{</span>hyperref<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">\author</span><span class="nb">{</span>Anon Ymous<span class="nb">}</span>
 </span><span class='line'><span class="k">\date</span><span class="nb">{}</span>
 </span><span class='line'>
 </span><span class='line'><span class="k">\title</span><span class="nb">{</span>third example<span class="nb">}</span>
@@ -509,15 +602,59 @@ where the command is called in the source document.</p>
 </span><span class='line'>
 </span><span class='line'><span class="k">\chapter</span><span class="nb">{</span>first section<span class="nb">}</span>
 </span><span class='line'>
-</span><span class='line'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at dolor
-</span><span class='line'>nibh, eget tempus neque.
+</span><span class='line'><span class="k">\section</span><span class="nb">{</span>Document<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">\subsection</span><span class="nb">{</span>The document&#39;s class<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'>The first example we saw was an <span class="k">\textit</span><span class="nb">{</span>article<span class="nb">}</span>, the second was a
+</span><span class='line'><span class="k">\textit</span><span class="nb">{</span>book<span class="nb">}</span>, and this example is a <span class="k">\textit</span><span class="nb">{</span>report<span class="nb">}</span>.
+</span><span class='line'>Different document classes get rendered differently.
+</span><span class='line'>
+</span><span class='line'>There is a very good explanation of the major document classes in the LaTeX
+</span><span class='line'>wikibook at <span class="k">\url</span><span class="nb">{</span>http://en.wikibooks.org/wiki/LaTeX/Basics#Document<span class="nb">_</span>Classes<span class="nb">}</span>.
+</span><span class='line'>
+</span><span class='line'>One this to keep in mind though, is that different document classes have
+</span><span class='line'>different document structures, i.e. sectioning commands, check
+</span><span class='line'><span class="k">\url</span><span class="nb">{</span>http://en.wikibooks.org/wiki/LaTeX/Document<span class="nb">_</span>Structure#Sectioning<span class="nb">_</span>Commands<span class="nb">}</span>
+</span><span class='line'>for more information.
+</span><span class='line'>
+</span><span class='line'>For example, you cannot have chapters in articles, because it doesn&#39;t make
+</span><span class='line'>sense there semantically speaking.
 </span><span class='line'>
 </span><span class='line'>
-</span><span class='line'><span class="k">\section</span><span class="nb">{</span>first section<span class="nb">}</span>
+</span><span class='line'><span class="k">\subsection</span><span class="nb">{</span>The document&#39;s date<span class="nb">}</span>
 </span><span class='line'>
-</span><span class='line'><span class="k">\subsection</span><span class="nb">{</span>Different kinds of lists<span class="nb">}</span>
+</span><span class='line'>In the first two examples, a date is rendered on the title page. The first
+</span><span class='line'>example however doesn&#39;t have an explicit date command in the
+</span><span class='line'><span class="k">\textbf</span><span class="nb">{</span>top matter<span class="nb">}</span>.
+</span><span class='line'>By default the date is set to the <span class="k">\verb</span>`<span class="k">\today</span>` command&#39;s value, which is
+</span><span class='line'>today&#39;s date.
+</span><span class='line'>
+</span><span class='line'>There is however a difference between the first and second example, and that is
+</span><span class='line'>the date&#39;s format. The culprit here is the <span class="k">\textit</span><span class="nb">{</span>babel<span class="nb">}</span> package which also
+</span><span class='line'>changes the date&#39;s format so that it conforms with the document&#39;s language.
+</span><span class='line'>
+</span><span class='line'>Nevertheless, there comes a time where you don&#39;t want a date on your document
+</span><span class='line'>and that can be accomplish by defining a date without any parameters, like in
+</span><span class='line'>this example.
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="k">\section</span><span class="nb">{</span>Internet links<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'>Looking at the preamble of this document, you&#39;ll see we use a new package
+</span><span class='line'><span class="k">\textit</span><span class="nb">{</span>hyperref<span class="nb">}</span>. This allows us to insert all sorts of links into our
+</span><span class='line'>document. For now we&#39;ll only use the <span class="k">\verb</span>`<span class="k">\url</span>` command. It allows you to
+</span><span class='line'>insert the link to a web resource in text. Clicking it will launch it in your
+</span><span class='line'>default browser.
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="k">\chapter</span><span class="nb">{</span>Give me some lists!<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">\section</span><span class="nb">{</span>Different kinds of lists<span class="nb">}</span>
 </span><span class='line'>
 </span><span class='line'>In latex there are three kinds of lists, we&#39;ll have a look at all three types.
+</span><span class='line'>
+</span><span class='line'><span class="k">\subsection</span><span class="nb">{</span>Itemize<span class="nb">}</span>
 </span><span class='line'>
 </span><span class='line'>An unordered list in latex is created with the <span class="k">\textbf</span><span class="nb">{</span>itemize<span class="nb">}</span> environment:
 </span><span class='line'>
@@ -527,6 +664,12 @@ where the command is called in the source document.</p>
 </span><span class='line'>    <span class="k">\item</span> Third item
 </span><span class='line'><span class="k">\end</span><span class="nb">{</span>itemize<span class="nb">}</span>
 </span><span class='line'>
+</span><span class='line'>An unordered list in latex is created with the <span class="k">\textbf</span><span class="nb">{</span>itemize<span class="nb">}</span> environment.
+</span><span class='line'>The <span class="k">\textbf</span><span class="nb">{</span>itemize<span class="nb">}</span> environment is semantically suitable for lists of items
+</span><span class='line'>for which the order is not important.
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="k">\subsection</span><span class="nb">{</span>Enumerate<span class="nb">}</span>
 </span><span class='line'>
 </span><span class='line'>An ordered list in latex is created with the <span class="k">\textbf</span><span class="nb">{</span>enumerate<span class="nb">}</span> environment:
 </span><span class='line'>
@@ -536,6 +679,12 @@ where the command is called in the source document.</p>
 </span><span class='line'>    <span class="k">\item</span> Third item
 </span><span class='line'><span class="k">\end</span><span class="nb">{</span>enumerate<span class="nb">}</span>
 </span><span class='line'>
+</span><span class='line'>An ordered list in latex is created with the <span class="k">\textbf</span><span class="nb">{</span>enumerate<span class="nb">}</span> environment.
+</span><span class='line'>The <span class="k">\textbf</span><span class="nb">{</span>enumerate<span class="nb">}</span> environment is semantically suitable for lists of items
+</span><span class='line'>for which the order is important.
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="k">\subsection</span><span class="nb">{</span>Descriptions<span class="nb">}</span>
 </span><span class='line'>
 </span><span class='line'>A definition list in latex is created with the <span class="k">\textbf</span><span class="nb">{</span>description<span class="nb">}</span> environment:
 </span><span class='line'>
@@ -545,11 +694,16 @@ where the command is called in the source document.</p>
 </span><span class='line'>    <span class="k">\item</span><span class="na">[Third]</span> Third item
 </span><span class='line'><span class="k">\end</span><span class="nb">{</span>description<span class="nb">}</span>
 </span><span class='line'>
-</span><span class='line'>In the next section we&#39;ll see the different types of lists can also be nested
-</span><span class='line'>in different ways.
+</span><span class='line'>A definition list in latex is created with the <span class="k">\textbf</span><span class="nb">{</span>description<span class="nb">}</span> environment.
+</span><span class='line'>The <span class="k">\textbf</span><span class="nb">{</span>description<span class="nb">}</span> environment is semantically suitable for lists of
+</span><span class='line'>pairs made of terms to be described or defined, and their description or
+</span><span class='line'>definition.
 </span><span class='line'>
 </span><span class='line'>
-</span><span class='line'><span class="k">\subsection</span><span class="nb">{</span>Nested lists<span class="nb">}</span>
+</span><span class='line'><span class="k">\section</span><span class="nb">{</span>Nested lists<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'>In LaTeX you can insert a list environment into an existing one (up to a depth
+</span><span class='line'>of four). Different types of lists can be nested at different levels.
 </span><span class='line'>
 </span><span class='line'><span class="k">\begin</span><span class="nb">{</span>enumerate<span class="nb">}</span>
 </span><span class='line'>    <span class="k">\item</span> First item
@@ -567,66 +721,11 @@ where the command is called in the source document.</p>
 </span><span class='line'><span class="k">\end</span><span class="nb">{</span>enumerate<span class="nb">}</span>
 </span><span class='line'>
 </span><span class='line'>
-</span><span class='line'><span class="k">\chapter</span><span class="nb">{</span>second section<span class="nb">}</span>
-</span><span class='line'>
-</span><span class='line'>In suscipit, metus sed malesuada molestie, dui nibh tristique elit, vitae
-</span><span class='line'>suscipit diam turpis id enim.
-</span><span class='line'>
-</span><span class='line'>
-</span><span class='line'><span class="k">\section</span><span class="nb">{</span>first section of second chapter<span class="nb">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">\begin</span><span class="nb">{</span>verbatim<span class="nb">}</span>
-</span><span class='line'>Vestibulum   aliquam            lectus       hendrerit urna mattis pellentesque. Cras dignissim
-</span><span class='line'>egestas sem, ac pulvinar neque
-</span><span class='line'>venenatis ac.
-</span><span class='line'>
-</span><span class='line'>
-</span><span class='line'><span class="k">\section</span><span class="nb">{</span>first section of second chapter<span class="nb">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">\end</span><span class="nb">{</span>verbatim<span class="nb">}</span>
-</span><span class='line'>
-</span><span class='line'>Fusce eros mi, accumsan at dapibus vel, rutrum at nulla. Etiam sit amet magna
-</span><span class='line'>felis.
-</span><span class='line'>
 </span><span class='line'><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p><a href="/downloads/code/01-03-example.pdf">Download</a> the pdf version of this document
 to see the result.</p>
-
-<h3>The document's class</h3>
-
-<p>The first example we saw was an article, the second was a book, and this
-example is a report. Different document classes get rendered differently.</p>
-
-<p>There is a very good explanation of the major document classes in the <a href="http://en.wikibooks.org/wiki/LaTeX/Basics#Document_Classes">LaTeX
-wikibook</a>.</p>
-
-<p>One this to keep in mind though, is that different document classes have
-different document structures, i.e. <a href="http://en.wikibooks.org/wiki/LaTeX/Document_Structure#Sectioning_Commands">sectioning commands</a>. For example, you cannot
-have chapters in articles, because it doesn't make sense there.</p>
-
-<h3>The document's date</h3>
-
-<p>In the first two examples, a date is rendered on the title page. The first
-example however doesn't have an explicit date command in the <strong>top matter</strong>. By
-default the date is set to the <code>\today</code> command's value, which is today's date.</p>
-
-<p>There is however a difference between the first and second example, and that is
-the date's format. The culprit here is the <em>babel</em> package which also changes
-the date's format so that it conforms with the document's language.</p>
-
-<p>Nevertheless, there comes a time where you don't want a date on your document
-and that can be accomplish by defining a date without any parameters, like in
-this example.</p>
-
-<h3>Latex lists</h3>
-
-<p>More to come later.</p>
-
-<h3>Verbatim environment</h3>
-
-<p>More to come later.</p>
 
 <h2>Latex: Some math</h2>
 
@@ -695,6 +794,26 @@ this example.</p>
 <span class='line-number'>62</span>
 <span class='line-number'>63</span>
 <span class='line-number'>64</span>
+<span class='line-number'>65</span>
+<span class='line-number'>66</span>
+<span class='line-number'>67</span>
+<span class='line-number'>68</span>
+<span class='line-number'>69</span>
+<span class='line-number'>70</span>
+<span class='line-number'>71</span>
+<span class='line-number'>72</span>
+<span class='line-number'>73</span>
+<span class='line-number'>74</span>
+<span class='line-number'>75</span>
+<span class='line-number'>76</span>
+<span class='line-number'>77</span>
+<span class='line-number'>78</span>
+<span class='line-number'>79</span>
+<span class='line-number'>80</span>
+<span class='line-number'>81</span>
+<span class='line-number'>82</span>
+<span class='line-number'>83</span>
+<span class='line-number'>84</span>
 </pre></td><td class='code'><pre><code class='latex'><span class='line'><span class="k">\documentclass</span><span class="na">[a4paper]</span><span class="nb">{</span>article<span class="nb">}</span>
 </span><span class='line'>
 </span><span class='line'><span class="k">\usepackage</span><span class="na">[utf8]</span><span class="nb">{</span>inputenc<span class="nb">}</span>
@@ -704,7 +823,9 @@ this example.</p>
 </span><span class='line'><span class="k">\usepackage</span><span class="nb">{</span>amsmath<span class="nb">}</span>
 </span><span class='line'><span class="k">\usepackage</span><span class="nb">{</span>amssymb<span class="nb">}</span>
 </span><span class='line'>
-</span><span class='line'><span class="k">\author</span><span class="nb">{</span>Mickey Mouse<span class="nb">}</span>
+</span><span class='line'><span class="k">\usepackage</span><span class="nb">{</span>hyperref<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">\author</span><span class="nb">{</span>Anon Ymous<span class="nb">}</span>
 </span><span class='line'><span class="k">\date</span><span class="nb">{</span><span class="k">\today</span><span class="nb">}</span>
 </span><span class='line'>
 </span><span class='line'><span class="k">\title</span><span class="nb">{</span>fourth example<span class="nb">}</span>
@@ -716,47 +837,65 @@ this example.</p>
 </span><span class='line'>
 </span><span class='line'><span class="k">\tableofcontents</span>
 </span><span class='line'>
-</span><span class='line'><span class="k">\section</span><span class="nb">{</span>first section<span class="nb">}</span>
+</span><span class='line'><span class="k">\section</span><span class="nb">{</span>Math modes<span class="nb">}</span>
 </span><span class='line'>
-</span><span class='line'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at dolor
-</span><span class='line'>nibh, eget tempus neque. Vestibulum ante ipsum primis in faucibus orci luctus
-</span><span class='line'>et ultrices posuere cubilia Curae; Cras sapien arcu, aliquam ac auctor ac,
-</span><span class='line'>venenatis vel lectus. Donec posuere mauris eget dui malesuada eu tristique
-</span><span class='line'>neque ultricies. Nam est augue, interdum et iaculis nec, vestibulum sed augue.
-</span><span class='line'>Sed eget enim orci.
+</span><span class='line'>When you want to add some mathematical notations containing mathematical symbols
+</span><span class='line'>you&#39;ll need to write it in a special environment because LaTeX typesets maths
+</span><span class='line'>notation differently than normal text. There are two main environments you need
+</span><span class='line'>to know about.
 </span><span class='line'>
 </span><span class='line'>
-</span><span class='line'><span class="k">\subsection</span><span class="nb">{</span>first subsection<span class="nb">}</span>
+</span><span class='line'><span class="k">\subsection</span><span class="nb">{</span>Inline math mode<span class="nb">}</span>
 </span><span class='line'>
-</span><span class='line'>Nam ultricies tellus in nunc dignissim tincidunt feugiat diam sodales. Nullam a
-</span><span class='line'>justo libero, ac pellentesque lectus. Curabitur sit amet venenatis ipsum.
-</span><span class='line'>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
-</span><span class='line'>turpis egestas.
+</span><span class='line'>The math mode where formulas are displayed inline, in the middle of running
+</span><span class='line'>text. Your mathematical formulas need to be enclosed in single dollar
+</span><span class='line'>signs, e.g. <span class="s">$</span><span class="nb">x^</span><span class="m">4</span><span class="nb"> </span><span class="o">+</span><span class="nb"> x^</span><span class="m">2</span><span class="nb"> </span><span class="o">=</span><span class="nb"> </span><span class="m">0</span><span class="s">$</span>
 </span><span class='line'>
-</span><span class='line'>
-</span><span class='line'><span class="k">\section</span><span class="nb">{</span>second section<span class="nb">}</span>
-</span><span class='line'>
-</span><span class='line'>In suscipit, metus sed malesuada molestie, dui nibh tristique elit, vitae
-</span><span class='line'>suscipit diam turpis id enim. Pellentesque habitant morbi tristique senectus et
-</span><span class='line'>netus et malesuada fames ac turpis egestas. Nulla facilisi. Morbi scelerisque
-</span><span class='line'>dapibus dictum. Cras quis nulla vel erat tempor sollicitudin.
+</span><span class='line'>This inline formula <span class="s">$</span><span class="nb">x </span><span class="o">=</span><span class="nb"> </span><span class="m">4</span><span class="s">$</span> appears in the flow with the text.
 </span><span class='line'>
 </span><span class='line'>
-</span><span class='line'><span class="k">\subsection</span><span class="nb">{</span>first subsection of second section<span class="nb">}</span>
+</span><span class='line'><span class="k">\subsection</span><span class="nb">{</span>Display math mode<span class="nb">}</span>
 </span><span class='line'>
-</span><span class='line'>Vestibulum aliquam lectus hendrerit urna mattis pellentesque. Cras dignissim
-</span><span class='line'>egestas sem, ac pulvinar neque venenatis ac. Lorem ipsum dolor sit amet,
-</span><span class='line'>consectetur adipiscing elit. Vestibulum nibh lorem, tincidunt quis varius ac,
-</span><span class='line'>commodo vitae nibh. Fusce vulputate diam id urna egestas et mattis urna mattis.
-</span><span class='line'>Praesent risus felis, tristique at ullamcorper nec, fringilla et sapien.
+</span><span class='line'>The <span class="k">\textbf</span><span class="nb">{</span>Display<span class="nb">}</span> math mode where formulas are displayed centered on a new
+</span><span class='line'>line. Your mathematical formulas need to be enclosed in double dollar
+</span><span class='line'>signs, e.g. <span class="sb">$$</span><span class="nb">x^</span><span class="m">4</span><span class="nb"> </span><span class="o">+</span><span class="nb"> x^</span><span class="m">2</span><span class="nb"> </span><span class="o">=</span><span class="nb"> </span><span class="m">0</span><span class="s">$$</span>
+</span><span class='line'>
+</span><span class='line'>This display formula <span class="sb">$$</span><span class="nb">x </span><span class="o">=</span><span class="nb"> </span><span class="m">4</span><span class="s">$$</span> appears out of the text flow.
+</span><span class='line'>
+</span><span class='line'>Of course formulas can be much more complex whether inline in text math mode
+</span><span class='line'><span class="s">$</span><span class="nv">\forall</span><span class="nb"> x </span><span class="nv">\in</span><span class="nb"> X, </span><span class="nv">\quad</span><span class="nb"> </span><span class="nv">\exists</span><span class="nb"> y </span><span class="nv">\leq</span><span class="nb"> </span><span class="nv">\epsilon</span><span class="s">$</span> or in display math mode:
+</span><span class='line'><span class="sb">$$</span><span class="nv">\forall</span><span class="nb"> x </span><span class="nv">\in</span><span class="nb"> X, </span><span class="nv">\quad</span><span class="nb"> </span><span class="nv">\exists</span><span class="nb"> y </span><span class="nv">\leq</span><span class="nb"> </span><span class="nv">\epsilon</span><span class="s">$$</span>
+</span><span class='line'>
+</span><span class='line'>You can read more about these modes in the LaTeX wikibook at
+</span><span class='line'><span class="k">\url</span><span class="nb">{</span>http://en.wikibooks.org/wiki/LaTeX/Mathematics#Mathematics<span class="nb">_</span>environments<span class="nb">}</span>
 </span><span class='line'>
 </span><span class='line'>
-</span><span class='line'><span class="k">\subsection</span><span class="nb">{</span>first subsection of second section<span class="nb">}</span>
+</span><span class='line'><span class="k">\section</span><span class="nb">{</span>Superscript and subscript<span class="nb">}</span>
 </span><span class='line'>
-</span><span class='line'>Fusce eros mi, accumsan at dapibus vel, rutrum at nulla. Etiam sit amet magna
-</span><span class='line'>felis. Suspendisse potenti. Phasellus velit dui, posuere sed fermentum at,
-</span><span class='line'>fermentum quis est. Maecenas diam neque, interdum at lobortis vel, porttitor
-</span><span class='line'>at massa.
+</span><span class='line'>Subscripts in latex are accomplished with the underscore <span class="s">$</span><span class="nb">x_</span><span class="m">4</span><span class="nb"> </span><span class="o">=</span><span class="nb"> </span><span class="m">1</span><span class="s">$</span>.
+</span><span class='line'>Superscripts in latex are accomplished with the circumflex character
+</span><span class='line'>(also called the hat character) <span class="s">$</span><span class="nb">x^</span><span class="m">4</span><span class="nb"> </span><span class="o">=</span><span class="nb"> </span><span class="m">1</span><span class="s">$</span>.
+</span><span class='line'>
+</span><span class='line'>However, that alone only works with one character after the underscore or hat
+</span><span class='line'><span class="s">$</span><span class="nb">x_</span><span class="m">40</span><span class="nb"> </span><span class="o">=</span><span class="nb"> </span><span class="m">1</span><span class="s">$</span>.
+</span><span class='line'>The solution to this problem is to include the subscripted or superscripted
+</span><span class='line'>text in curly braces <span class="s">$</span><span class="nb">x_{</span><span class="m">40</span><span class="nb">} </span><span class="o">=</span><span class="nb"> </span><span class="m">1</span><span class="s">$</span>.
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="k">\section</span><span class="nb">{</span>Fractions<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'>In order to insert fractions in your text, you have the choice between the
+</span><span class='line'>commands <span class="k">\verb</span>`<span class="k">\frac</span>` and <span class="k">\verb</span>`<span class="k">\dfrac</span>`.
+</span><span class='line'>
+</span><span class='line'>This is how the <span class="k">\verb</span>`<span class="k">\frac</span>` command renders in math mode: <span class="s">$</span><span class="nv">\frac</span><span class="nb">{x}{</span><span class="m">2</span><span class="nb">}</span><span class="s">$</span>
+</span><span class='line'>
+</span><span class='line'>This is how the <span class="k">\verb</span>`<span class="k">\frac</span>` command renders in display mode: <span class="sb">$$</span><span class="nv">\frac</span><span class="nb">{x}{</span><span class="m">2</span><span class="nb">}</span><span class="s">$$</span>
+</span><span class='line'>
+</span><span class='line'>You&#39;ll notice that depending on the environment fractions render differently. In
+</span><span class='line'>case you want to have the display mode rendering in inline math mode, you can
+</span><span class='line'>use the <span class="k">\verb</span>`<span class="k">\dfrac</span>` to do so: <span class="s">$</span><span class="nv">\dfrac</span><span class="nb">{x}{</span><span class="m">2</span><span class="nb">}</span><span class="s">$</span>. Using it in diplay mode however
+</span><span class='line'>doesn&#39;t change anything and things render like previously: <span class="sb">$$</span><span class="nv">\dfrac</span><span class="nb">{x}{</span><span class="m">2</span><span class="nb">}</span><span class="s">$$</span>
+</span><span class='line'>
 </span><span class='line'>
 </span><span class='line'><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
@@ -764,28 +903,74 @@ this example.</p>
 <p><a href="/downloads/code/01-04-example.pdf">Download</a> the pdf version of this document
 to see the result.</p>
 
-<h3>Math modes</h3>
-
-<p>More to come later.</p>
-
-<h3>Fractions</h3>
-
-<p>More to come later.</p>
-
 <h2>Templates</h2>
 
 <p>In other programs like word, you create a document template that fits your need
 in order to create the same document style over and over. In latex, that's a
 matter of writing a preamble and some document elements to a text file, that
-you'll simple copy and use.</p>
+you'll simple copy and use. Here is a simple one made with the things we
+covered.</p>
 
-<h2>Installing MikTex on windows</h2>
-
-<p>More to come later.</p>
-
-<h2>Installing texlive on Ubuntu</h2>
-
-<p>More to come later.</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>[Forth example] [] (01-template.tex)</span> <a href='/downloads/code/01-template.tex'>download</a></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+</pre></td><td class='code'><pre><code class='latex'><span class='line'><span class="k">\documentclass</span><span class="na">[a4paper]</span><span class="nb">{</span>article<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">\usepackage</span><span class="na">[utf8]</span><span class="nb">{</span>inputenc<span class="nb">}</span>
+</span><span class='line'><span class="k">\usepackage</span><span class="na">[T1]</span><span class="nb">{</span>fontenc<span class="nb">}</span>
+</span><span class='line'><span class="k">\usepackage</span><span class="na">[ngerman]</span><span class="nb">{</span>babel<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">\usepackage</span><span class="nb">{</span>amsmath<span class="nb">}</span>
+</span><span class='line'><span class="k">\usepackage</span><span class="nb">{</span>amssymb<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">\usepackage</span><span class="nb">{</span>hyperref<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">\author</span><span class="nb">{</span>Your name<span class="nb">}</span>
+</span><span class='line'><span class="k">\date</span><span class="nb">{</span><span class="k">\today</span><span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">\title</span><span class="nb">{</span>Document title<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">\maketitle</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">\tableofcontents</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">\section</span><span class="nb">{</span>Section 1<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">\subsection</span><span class="nb">{</span>Subsection<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 ]]></content>
   </entry>
   

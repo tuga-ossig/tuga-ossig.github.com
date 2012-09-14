@@ -7,7 +7,9 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 
-\author{Mickey Mouse}
+\usepackage{hyperref}
+
+\author{Anon Ymous}
 \date{\today}
 
 \title{fourth example}
@@ -19,46 +21,64 @@
 
 \tableofcontents
 
-\section{first section}
+\section{Math modes}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at dolor
-nibh, eget tempus neque. Vestibulum ante ipsum primis in faucibus orci luctus
-et ultrices posuere cubilia Curae; Cras sapien arcu, aliquam ac auctor ac,
-venenatis vel lectus. Donec posuere mauris eget dui malesuada eu tristique
-neque ultricies. Nam est augue, interdum et iaculis nec, vestibulum sed augue.
-Sed eget enim orci.
+When you want to add some mathematical notations containing mathematical symbols
+you'll need to write it in a special environment because LaTeX typesets maths
+notation differently than normal text. There are two main environments you need
+to know about.
 
 
-\subsection{first subsection}
+\subsection{Inline math mode}
 
-Nam ultricies tellus in nunc dignissim tincidunt feugiat diam sodales. Nullam a
-justo libero, ac pellentesque lectus. Curabitur sit amet venenatis ipsum.
-Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
-turpis egestas.
+The math mode where formulas are displayed inline, in the middle of running
+text. Your mathematical formulas need to be enclosed in single dollar
+signs, e.g. $x^4 + x^2 = 0$
 
-
-\section{second section}
-
-In suscipit, metus sed malesuada molestie, dui nibh tristique elit, vitae
-suscipit diam turpis id enim. Pellentesque habitant morbi tristique senectus et
-netus et malesuada fames ac turpis egestas. Nulla facilisi. Morbi scelerisque
-dapibus dictum. Cras quis nulla vel erat tempor sollicitudin.
+This inline formula $x = 4$ appears in the flow with the text.
 
 
-\subsection{first subsection of second section}
+\subsection{Display math mode}
 
-Vestibulum aliquam lectus hendrerit urna mattis pellentesque. Cras dignissim
-egestas sem, ac pulvinar neque venenatis ac. Lorem ipsum dolor sit amet,
-consectetur adipiscing elit. Vestibulum nibh lorem, tincidunt quis varius ac,
-commodo vitae nibh. Fusce vulputate diam id urna egestas et mattis urna mattis.
-Praesent risus felis, tristique at ullamcorper nec, fringilla et sapien.
+The \textbf{Display} math mode where formulas are displayed centered on a new
+line. Your mathematical formulas need to be enclosed in double dollar
+signs, e.g. $$x^4 + x^2 = 0$$
+
+This display formula $$x = 4$$ appears out of the text flow.
+
+Of course formulas can be much more complex whether inline in text math mode
+$\forall x \in X, \quad \exists y \leq \epsilon$ or in display math mode:
+$$\forall x \in X, \quad \exists y \leq \epsilon$$
+
+You can read more about these modes in the LaTeX wikibook at
+\url{http://en.wikibooks.org/wiki/LaTeX/Mathematics#Mathematics_environments}
 
 
-\subsection{first subsection of second section}
+\section{Superscript and subscript}
 
-Fusce eros mi, accumsan at dapibus vel, rutrum at nulla. Etiam sit amet magna
-felis. Suspendisse potenti. Phasellus velit dui, posuere sed fermentum at,
-fermentum quis est. Maecenas diam neque, interdum at lobortis vel, porttitor
-at massa.
+Subscripts in latex are accomplished with the underscore $x_4 = 1$.
+Superscripts in latex are accomplished with the circumflex character
+(also called the hat character) $x^4 = 1$.
+
+However, that alone only works with one character after the underscore or hat
+$x_40 = 1$.
+The solution to this problem is to include the subscripted or superscripted
+text in curly braces $x_{40} = 1$.
+
+
+\section{Fractions}
+
+In order to insert fractions in your text, you have the choice between the
+commands \verb`\frac` and \verb`\dfrac`.
+
+This is how the \verb`\frac` command renders in math mode: $\frac{x}{2}$
+
+This is how the \verb`\frac` command renders in display mode: $$\frac{x}{2}$$
+
+You'll notice that depending on the environment fractions render differently. In
+case you want to have the display mode rendering in inline math mode, you can
+use the \verb`\dfrac` to do so: $\dfrac{x}{2}$. Using it in diplay mode however
+doesn't change anything and things render like previously: $$\dfrac{x}{2}$$
+
 
 \end{document}
