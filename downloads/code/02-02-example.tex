@@ -1,0 +1,60 @@
+\documentclass[handout]{beamer}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\usepackage{hyperref}
+
+\author{Anon Ymous}
+\date{\today}
+
+\title{Beamer slides}
+
+\begin{document}
+\begin{frame}
+    \frametitle{There Is No Largest Prime Number}
+    \framesubtitle{The proof uses \textit{reductio ad absurdum}.}
+    \begin{theorem}
+        There is no largest prime number.
+    \end{theorem}
+    \begin{proof}
+        \begin{enumerate}
+            \item<1-| alert@1> Suppose $p$ were the largest prime number.
+            \item<2-> Let $q$ be the product of the first $p$ numbers.
+            \item<3-> Then $q+1$ is not divisible by any of them.
+            \item<1-> But $q + 1$ is greater than $1$, thus divisible by some prime
+            number not in the first $p$ numbers.\qedhere
+        \end{enumerate}
+    \end{proof}
+\end{frame}
+\begin{frame}
+    \frametitle{Beamer terminology}
+    \framesubtitle{frame}
+    \begin{description}
+        \item<1-| alert@1>[frame] is basic building blocks of presentations.
+        \item<2-| alert@2>[frame] consists of a series of slides.
+        \item<3-| alert@3>[frame] is a beamer environment.
+    \end{description}
+\end{frame}
+\begin{frame}
+    \frametitle{More terminology}
+    \framesubtitle{frametitle, framesubtitle}
+    \begin{description}
+        \item<1-| alert@1>[frametitle] Title displayed on the frame.
+        \item<2-| alert@2>[framesubtitle] Subtitle displayed on the frame.
+    \end{description}
+\end{frame}
+\begin{frame}
+    \frametitle{overlays}
+    \begin{block}{Definition}
+        \alert{Overlays} are the equivalent of PowerPoint transitions in beamer.
+        Allows elements to be shown on different slides in the same frame.
+    \end{block}
+\end{frame}
+
+
+\end{document}

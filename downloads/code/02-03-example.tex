@@ -1,0 +1,100 @@
+\documentclass[a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\usepackage{hyperref}
+
+\author{Anon Ymous}
+\date{\today}
+
+\title{Basic math notations}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\section{Arrows}
+
+Arrows are used in maths a lot, but not only. We often need to insert arrow
+symbols in our documents, fortunately for us latex makes it easy through the
+math modes, and the plethora of arrow symbols available for use.
+
+\subsection{Single arrows}
+
+Those are single arrows:
+$$x \rightarrow y$$
+$$x \leftarrow y$$
+$$x \leftrightarrow y$$
+
+
+The negated equivalents here are (arrows with stroke):
+
+$$x \nrightarrow y$$
+$$x \nleftarrow y$$
+$$x \nleftrightarrow y$$
+
+\subsection{Double arrows}
+
+Those are single arrows:
+$$x \Rightarrow y$$
+$$x \Leftarrow y$$
+$$x \Leftrightarrow y$$
+
+
+The negated equivalents here are (arrows with stroke):
+$$x \nRightarrow y$$
+$$x \nLeftarrow y$$
+$$x \nLeftrightarrow y$$
+
+\subsection{Arrows with a semantic name}
+
+\verb`\to` is a shorthand of \verb`\rightarrow` except with a semantic command
+name. This is specially useful in math formulas:
+
+$$U:\mathbb R \to \mathbb R$$
+
+\verb`\gets` is a shorthand of \verb`\leftarrow` except with a semantic command
+name.
+
+\verb`\mapsto` is a rightwards arrow from bar, with a semantic command name.
+
+$$x \mapsto x^3 + 1$$
+
+
+\section{Displaystyle and Summing}
+
+In order for certain notations, such as \verb`\lim` or \verb`\sum` to be
+displayed correctly inside some math environments (derrived from the inline
+math mode), it might be convenient to wrap your formulas with the
+\verb`\displaystyle` class. Doing so might cause the line to be taller, but
+will cause exponents and indices to be displayed correctly.
+
+For example the sum notation inline looks like this: $\sum_{i = 0}^{k}{x(i)}$
+
+Whereas in display math mode looks like this:
+$$\sum_{i = 0}^{k}{x(i)}$$
+
+The displaymath style in normal math mode (inline):
+$\displaystyle{\sum_{i = 0}^{k}{x(i)}}$
+
+\section{Vectors}
+
+Adding a vector notation (the arrow over a letter), is simply accomplished
+with the \verb`\vec` command:
+
+$$(\vec{i}, \vec{j})$$
+
+However, the proportions on $\vec{AB}$ are lost. To remedy to this problem,
+it's possible to use another command \verb`\overrightarrow` at the cost of the
+command's semantic name.
+
+$$\overrightarrow{AB} + \overrightarrow{BC} = \overrightarrow{AC}$$
+
+
+\end{document}

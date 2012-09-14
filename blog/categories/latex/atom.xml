@@ -4,7 +4,7 @@
   <title><![CDATA[Category: latex | TUGA OSSIG]]></title>
   <link href="http://tuga-ossig.github.com/blog/categories/latex/atom.xml" rel="self"/>
   <link href="http://tuga-ossig.github.com/"/>
-  <updated>2012-09-14T17:13:38+02:00</updated>
+  <updated>2012-09-15T01:20:39+02:00</updated>
   <id>http://tuga-ossig.github.com/</id>
   <author>
     <name><![CDATA[Joe R. Nassimian]]></name>
@@ -18,7 +18,476 @@
     <link href="http://tuga-ossig.github.com/blog/2012/09/07/session-02/"/>
     <updated>2012-09-07T00:00:00+02:00</updated>
     <id>http://tuga-ossig.github.com/blog/2012/09/07/session-02</id>
-    <content type="html"><![CDATA[
+    <content type="html"><![CDATA[<p>In this session, we had a quick look at latex's beamer document class. In
+between technical difficulties, we discussed certain math notations, specially
+the ones useful for chemistry.</p>
+
+<!-- more -->
+
+
+<h2>Beamer: Definitions</h2>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>[Beamer presentation] [] (02-01-example.tex)</span> <a href='/downloads/code/02-01-example.tex'>download</a></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+</pre></td><td class='code'><pre><code class='latex'><span class='line'><span class="k">\documentclass</span><span class="nb">{</span>beamer<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">\usepackage</span><span class="na">[utf8]</span><span class="nb">{</span>inputenc<span class="nb">}</span>
+</span><span class='line'><span class="k">\usepackage</span><span class="na">[T1]</span><span class="nb">{</span>fontenc<span class="nb">}</span>
+</span><span class='line'><span class="k">\usepackage</span><span class="na">[ngerman]</span><span class="nb">{</span>babel<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">\usepackage</span><span class="nb">{</span>amsmath<span class="nb">}</span>
+</span><span class='line'><span class="k">\usepackage</span><span class="nb">{</span>amssymb<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">\usepackage</span><span class="nb">{</span>hyperref<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">\author</span><span class="nb">{</span>Anon Ymous<span class="nb">}</span>
+</span><span class='line'><span class="k">\date</span><span class="nb">{</span><span class="k">\today</span><span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">\title</span><span class="nb">{</span>Beamer slides<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+</span><span class='line'><span class="k">\begin</span><span class="nb">{</span>frame<span class="nb">}</span>
+</span><span class='line'>    <span class="k">\frametitle</span><span class="nb">{</span>There Is No Largest Prime Number<span class="nb">}</span>
+</span><span class='line'>    <span class="k">\framesubtitle</span><span class="nb">{</span>The proof uses <span class="k">\textit</span><span class="nb">{</span>reductio ad absurdum<span class="nb">}</span>.<span class="nb">}</span>
+</span><span class='line'>    <span class="k">\begin</span><span class="nb">{</span>theorem<span class="nb">}</span>
+</span><span class='line'>        There is no largest prime number.
+</span><span class='line'>    <span class="k">\end</span><span class="nb">{</span>theorem<span class="nb">}</span>
+</span><span class='line'>    <span class="k">\begin</span><span class="nb">{</span>proof<span class="nb">}</span>
+</span><span class='line'>        <span class="k">\begin</span><span class="nb">{</span>enumerate<span class="nb">}</span>
+</span><span class='line'>            <span class="k">\item</span>&lt;1-| alert@1&gt; Suppose <span class="s">$</span><span class="nb">p</span><span class="s">$</span> were the largest prime number.
+</span><span class='line'>            <span class="k">\item</span>&lt;2-&gt; Let <span class="s">$</span><span class="nb">q</span><span class="s">$</span> be the product of the first <span class="s">$</span><span class="nb">p</span><span class="s">$</span> numbers.
+</span><span class='line'>            <span class="k">\item</span>&lt;3-&gt; Then <span class="s">$</span><span class="nb">q</span><span class="o">+</span><span class="m">1</span><span class="s">$</span> is not divisible by any of them.
+</span><span class='line'>            <span class="k">\item</span>&lt;1-&gt; But <span class="s">$</span><span class="nb">q </span><span class="o">+</span><span class="nb"> </span><span class="m">1</span><span class="s">$</span> is greater than <span class="s">$</span><span class="m">1</span><span class="s">$</span>, thus divisible by some prime
+</span><span class='line'>            number not in the first <span class="s">$</span><span class="nb">p</span><span class="s">$</span> numbers.<span class="k">\qedhere</span>
+</span><span class='line'>        <span class="k">\end</span><span class="nb">{</span>enumerate<span class="nb">}</span>
+</span><span class='line'>    <span class="k">\end</span><span class="nb">{</span>proof<span class="nb">}</span>
+</span><span class='line'><span class="k">\end</span><span class="nb">{</span>frame<span class="nb">}</span>
+</span><span class='line'><span class="k">\begin</span><span class="nb">{</span>frame<span class="nb">}</span>
+</span><span class='line'>    <span class="k">\frametitle</span><span class="nb">{</span>Beamer terminology<span class="nb">}</span>
+</span><span class='line'>    <span class="k">\framesubtitle</span><span class="nb">{</span>frame<span class="nb">}</span>
+</span><span class='line'>    <span class="k">\begin</span><span class="nb">{</span>description<span class="nb">}</span>
+</span><span class='line'>        <span class="k">\item</span>&lt;1-| alert@1&gt;[frame] is basic building blocks of presentations.
+</span><span class='line'>        <span class="k">\item</span>&lt;2-| alert@2&gt;[frame] consists of a series of slides.
+</span><span class='line'>        <span class="k">\item</span>&lt;3-| alert@3&gt;[frame] is a beamer environment.
+</span><span class='line'>    <span class="k">\end</span><span class="nb">{</span>description<span class="nb">}</span>
+</span><span class='line'><span class="k">\end</span><span class="nb">{</span>frame<span class="nb">}</span>
+</span><span class='line'><span class="k">\begin</span><span class="nb">{</span>frame<span class="nb">}</span>
+</span><span class='line'>    <span class="k">\frametitle</span><span class="nb">{</span>More terminology<span class="nb">}</span>
+</span><span class='line'>    <span class="k">\framesubtitle</span><span class="nb">{</span>frametitle, framesubtitle<span class="nb">}</span>
+</span><span class='line'>    <span class="k">\begin</span><span class="nb">{</span>description<span class="nb">}</span>
+</span><span class='line'>        <span class="k">\item</span>&lt;1-| alert@1&gt;[frametitle] Title displayed on the frame.
+</span><span class='line'>        <span class="k">\item</span>&lt;2-| alert@2&gt;[framesubtitle] Subtitle displayed on the frame.
+</span><span class='line'>    <span class="k">\end</span><span class="nb">{</span>description<span class="nb">}</span>
+</span><span class='line'><span class="k">\end</span><span class="nb">{</span>frame<span class="nb">}</span>
+</span><span class='line'><span class="k">\begin</span><span class="nb">{</span>frame<span class="nb">}</span>
+</span><span class='line'>    <span class="k">\frametitle</span><span class="nb">{</span>overlays<span class="nb">}</span>
+</span><span class='line'>    <span class="k">\begin</span><span class="nb">{</span>block<span class="nb">}{</span>Definition<span class="nb">}</span>
+</span><span class='line'>        <span class="k">\alert</span><span class="nb">{</span>Overlays<span class="nb">}</span> are the equivalent of PowerPoint transitions in beamer.
+</span><span class='line'>        Allows elements to be shown on different slides in the same frame.
+</span><span class='line'>    <span class="k">\end</span><span class="nb">{</span>block<span class="nb">}</span>
+</span><span class='line'><span class="k">\end</span><span class="nb">{</span>frame<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p><a href="/downloads/code/02-01-example.pdf">Download</a> the pdf version of this document
+to see the result.</p>
+
+<h2>Beamer: Handouts</h2>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>[Beamer handout] [] (02-02-example.tex)</span> <a href='/downloads/code/02-02-example.tex'>download</a></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+</pre></td><td class='code'><pre><code class='latex'><span class='line'><span class="k">\documentclass</span><span class="na">[handout]</span><span class="nb">{</span>beamer<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">\usepackage</span><span class="na">[utf8]</span><span class="nb">{</span>inputenc<span class="nb">}</span>
+</span><span class='line'><span class="k">\usepackage</span><span class="na">[T1]</span><span class="nb">{</span>fontenc<span class="nb">}</span>
+</span><span class='line'><span class="k">\usepackage</span><span class="na">[ngerman]</span><span class="nb">{</span>babel<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">\usepackage</span><span class="nb">{</span>amsmath<span class="nb">}</span>
+</span><span class='line'><span class="k">\usepackage</span><span class="nb">{</span>amssymb<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">\usepackage</span><span class="nb">{</span>hyperref<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">\author</span><span class="nb">{</span>Anon Ymous<span class="nb">}</span>
+</span><span class='line'><span class="k">\date</span><span class="nb">{</span><span class="k">\today</span><span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">\title</span><span class="nb">{</span>Beamer slides<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+</span><span class='line'><span class="k">\begin</span><span class="nb">{</span>frame<span class="nb">}</span>
+</span><span class='line'>    <span class="k">\frametitle</span><span class="nb">{</span>There Is No Largest Prime Number<span class="nb">}</span>
+</span><span class='line'>    <span class="k">\framesubtitle</span><span class="nb">{</span>The proof uses <span class="k">\textit</span><span class="nb">{</span>reductio ad absurdum<span class="nb">}</span>.<span class="nb">}</span>
+</span><span class='line'>    <span class="k">\begin</span><span class="nb">{</span>theorem<span class="nb">}</span>
+</span><span class='line'>        There is no largest prime number.
+</span><span class='line'>    <span class="k">\end</span><span class="nb">{</span>theorem<span class="nb">}</span>
+</span><span class='line'>    <span class="k">\begin</span><span class="nb">{</span>proof<span class="nb">}</span>
+</span><span class='line'>        <span class="k">\begin</span><span class="nb">{</span>enumerate<span class="nb">}</span>
+</span><span class='line'>            <span class="k">\item</span>&lt;1-| alert@1&gt; Suppose <span class="s">$</span><span class="nb">p</span><span class="s">$</span> were the largest prime number.
+</span><span class='line'>            <span class="k">\item</span>&lt;2-&gt; Let <span class="s">$</span><span class="nb">q</span><span class="s">$</span> be the product of the first <span class="s">$</span><span class="nb">p</span><span class="s">$</span> numbers.
+</span><span class='line'>            <span class="k">\item</span>&lt;3-&gt; Then <span class="s">$</span><span class="nb">q</span><span class="o">+</span><span class="m">1</span><span class="s">$</span> is not divisible by any of them.
+</span><span class='line'>            <span class="k">\item</span>&lt;1-&gt; But <span class="s">$</span><span class="nb">q </span><span class="o">+</span><span class="nb"> </span><span class="m">1</span><span class="s">$</span> is greater than <span class="s">$</span><span class="m">1</span><span class="s">$</span>, thus divisible by some prime
+</span><span class='line'>            number not in the first <span class="s">$</span><span class="nb">p</span><span class="s">$</span> numbers.<span class="k">\qedhere</span>
+</span><span class='line'>        <span class="k">\end</span><span class="nb">{</span>enumerate<span class="nb">}</span>
+</span><span class='line'>    <span class="k">\end</span><span class="nb">{</span>proof<span class="nb">}</span>
+</span><span class='line'><span class="k">\end</span><span class="nb">{</span>frame<span class="nb">}</span>
+</span><span class='line'><span class="k">\begin</span><span class="nb">{</span>frame<span class="nb">}</span>
+</span><span class='line'>    <span class="k">\frametitle</span><span class="nb">{</span>Beamer terminology<span class="nb">}</span>
+</span><span class='line'>    <span class="k">\framesubtitle</span><span class="nb">{</span>frame<span class="nb">}</span>
+</span><span class='line'>    <span class="k">\begin</span><span class="nb">{</span>description<span class="nb">}</span>
+</span><span class='line'>        <span class="k">\item</span>&lt;1-| alert@1&gt;[frame] is basic building blocks of presentations.
+</span><span class='line'>        <span class="k">\item</span>&lt;2-| alert@2&gt;[frame] consists of a series of slides.
+</span><span class='line'>        <span class="k">\item</span>&lt;3-| alert@3&gt;[frame] is a beamer environment.
+</span><span class='line'>    <span class="k">\end</span><span class="nb">{</span>description<span class="nb">}</span>
+</span><span class='line'><span class="k">\end</span><span class="nb">{</span>frame<span class="nb">}</span>
+</span><span class='line'><span class="k">\begin</span><span class="nb">{</span>frame<span class="nb">}</span>
+</span><span class='line'>    <span class="k">\frametitle</span><span class="nb">{</span>More terminology<span class="nb">}</span>
+</span><span class='line'>    <span class="k">\framesubtitle</span><span class="nb">{</span>frametitle, framesubtitle<span class="nb">}</span>
+</span><span class='line'>    <span class="k">\begin</span><span class="nb">{</span>description<span class="nb">}</span>
+</span><span class='line'>        <span class="k">\item</span>&lt;1-| alert@1&gt;[frametitle] Title displayed on the frame.
+</span><span class='line'>        <span class="k">\item</span>&lt;2-| alert@2&gt;[framesubtitle] Subtitle displayed on the frame.
+</span><span class='line'>    <span class="k">\end</span><span class="nb">{</span>description<span class="nb">}</span>
+</span><span class='line'><span class="k">\end</span><span class="nb">{</span>frame<span class="nb">}</span>
+</span><span class='line'><span class="k">\begin</span><span class="nb">{</span>frame<span class="nb">}</span>
+</span><span class='line'>    <span class="k">\frametitle</span><span class="nb">{</span>overlays<span class="nb">}</span>
+</span><span class='line'>    <span class="k">\begin</span><span class="nb">{</span>block<span class="nb">}{</span>Definition<span class="nb">}</span>
+</span><span class='line'>        <span class="k">\alert</span><span class="nb">{</span>Overlays<span class="nb">}</span> are the equivalent of PowerPoint transitions in beamer.
+</span><span class='line'>        Allows elements to be shown on different slides in the same frame.
+</span><span class='line'>    <span class="k">\end</span><span class="nb">{</span>block<span class="nb">}</span>
+</span><span class='line'><span class="k">\end</span><span class="nb">{</span>frame<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p><a href="/downloads/code/02-02-example.pdf">Download</a> the pdf version of this document
+to see the result.</p>
+
+<h2>Latex: Math notations</h2>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>[Math notations] [] (02-03-example.tex)</span> <a href='/downloads/code/02-03-example.tex'>download</a></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+<span class='line-number'>65</span>
+<span class='line-number'>66</span>
+<span class='line-number'>67</span>
+<span class='line-number'>68</span>
+<span class='line-number'>69</span>
+<span class='line-number'>70</span>
+<span class='line-number'>71</span>
+<span class='line-number'>72</span>
+<span class='line-number'>73</span>
+<span class='line-number'>74</span>
+<span class='line-number'>75</span>
+<span class='line-number'>76</span>
+<span class='line-number'>77</span>
+<span class='line-number'>78</span>
+<span class='line-number'>79</span>
+<span class='line-number'>80</span>
+<span class='line-number'>81</span>
+<span class='line-number'>82</span>
+<span class='line-number'>83</span>
+<span class='line-number'>84</span>
+<span class='line-number'>85</span>
+<span class='line-number'>86</span>
+<span class='line-number'>87</span>
+<span class='line-number'>88</span>
+<span class='line-number'>89</span>
+<span class='line-number'>90</span>
+<span class='line-number'>91</span>
+<span class='line-number'>92</span>
+<span class='line-number'>93</span>
+<span class='line-number'>94</span>
+<span class='line-number'>95</span>
+<span class='line-number'>96</span>
+<span class='line-number'>97</span>
+<span class='line-number'>98</span>
+<span class='line-number'>99</span>
+<span class='line-number'>100</span>
+</pre></td><td class='code'><pre><code class='latex'><span class='line'><span class="k">\documentclass</span><span class="na">[a4paper]</span><span class="nb">{</span>article<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">\usepackage</span><span class="na">[utf8]</span><span class="nb">{</span>inputenc<span class="nb">}</span>
+</span><span class='line'><span class="k">\usepackage</span><span class="na">[T1]</span><span class="nb">{</span>fontenc<span class="nb">}</span>
+</span><span class='line'><span class="k">\usepackage</span><span class="na">[ngerman]</span><span class="nb">{</span>babel<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">\usepackage</span><span class="nb">{</span>amsmath<span class="nb">}</span>
+</span><span class='line'><span class="k">\usepackage</span><span class="nb">{</span>amssymb<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">\usepackage</span><span class="nb">{</span>hyperref<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">\author</span><span class="nb">{</span>Anon Ymous<span class="nb">}</span>
+</span><span class='line'><span class="k">\date</span><span class="nb">{</span><span class="k">\today</span><span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">\title</span><span class="nb">{</span>Basic math notations<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">\maketitle</span>
+</span><span class='line'><span class="k">\tableofcontents</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">\section</span><span class="nb">{</span>Arrows<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'>Arrows are used in maths a lot, but not only. We often need to insert arrow
+</span><span class='line'>symbols in our documents, fortunately for us latex makes it easy through the
+</span><span class='line'>math modes, and the plethora of arrow symbols available for use.
+</span><span class='line'>
+</span><span class='line'><span class="k">\subsection</span><span class="nb">{</span>Single arrows<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'>Those are single arrows:
+</span><span class='line'><span class="sb">$$</span><span class="nb">x </span><span class="nv">\rightarrow</span><span class="nb"> y</span><span class="s">$$</span>
+</span><span class='line'><span class="sb">$$</span><span class="nb">x </span><span class="nv">\leftarrow</span><span class="nb"> y</span><span class="s">$$</span>
+</span><span class='line'><span class="sb">$$</span><span class="nb">x </span><span class="nv">\leftrightarrow</span><span class="nb"> y</span><span class="s">$$</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>The negated equivalents here are (arrows with stroke):
+</span><span class='line'>
+</span><span class='line'><span class="sb">$$</span><span class="nb">x </span><span class="nv">\nrightarrow</span><span class="nb"> y</span><span class="s">$$</span>
+</span><span class='line'><span class="sb">$$</span><span class="nb">x </span><span class="nv">\nleftarrow</span><span class="nb"> y</span><span class="s">$$</span>
+</span><span class='line'><span class="sb">$$</span><span class="nb">x </span><span class="nv">\nleftrightarrow</span><span class="nb"> y</span><span class="s">$$</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">\subsection</span><span class="nb">{</span>Double arrows<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'>Those are single arrows:
+</span><span class='line'><span class="sb">$$</span><span class="nb">x </span><span class="nv">\Rightarrow</span><span class="nb"> y</span><span class="s">$$</span>
+</span><span class='line'><span class="sb">$$</span><span class="nb">x </span><span class="nv">\Leftarrow</span><span class="nb"> y</span><span class="s">$$</span>
+</span><span class='line'><span class="sb">$$</span><span class="nb">x </span><span class="nv">\Leftrightarrow</span><span class="nb"> y</span><span class="s">$$</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>The negated equivalents here are (arrows with stroke):
+</span><span class='line'><span class="sb">$$</span><span class="nb">x </span><span class="nv">\nRightarrow</span><span class="nb"> y</span><span class="s">$$</span>
+</span><span class='line'><span class="sb">$$</span><span class="nb">x </span><span class="nv">\nLeftarrow</span><span class="nb"> y</span><span class="s">$$</span>
+</span><span class='line'><span class="sb">$$</span><span class="nb">x </span><span class="nv">\nLeftrightarrow</span><span class="nb"> y</span><span class="s">$$</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">\subsection</span><span class="nb">{</span>Arrows with a semantic name<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">\verb</span>`<span class="k">\to</span>` is a shorthand of <span class="k">\verb</span>`<span class="k">\rightarrow</span>` except with a semantic command
+</span><span class='line'>name. This is specially useful in math formulas:
+</span><span class='line'>
+</span><span class='line'><span class="sb">$$</span><span class="nb">U:</span><span class="nv">\mathbb</span><span class="nb"> R </span><span class="nv">\to</span><span class="nb"> </span><span class="nv">\mathbb</span><span class="nb"> R</span><span class="s">$$</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">\verb</span>`<span class="k">\gets</span>` is a shorthand of <span class="k">\verb</span>`<span class="k">\leftarrow</span>` except with a semantic command
+</span><span class='line'>name.
+</span><span class='line'>
+</span><span class='line'><span class="k">\verb</span>`<span class="k">\mapsto</span>` is a rightwards arrow from bar, with a semantic command name.
+</span><span class='line'>
+</span><span class='line'><span class="sb">$$</span><span class="nb">x </span><span class="nv">\mapsto</span><span class="nb"> x^</span><span class="m">3</span><span class="nb"> </span><span class="o">+</span><span class="nb"> </span><span class="m">1</span><span class="s">$$</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="k">\section</span><span class="nb">{</span>Displaystyle and Summing<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'>In order for certain notations, such as <span class="k">\verb</span>`<span class="k">\lim</span>` or <span class="k">\verb</span>`<span class="k">\sum</span>` to be
+</span><span class='line'>displayed correctly inside some math environments (derrived from the inline
+</span><span class='line'>math mode), it might be convenient to wrap your formulas with the
+</span><span class='line'><span class="k">\verb</span>`<span class="k">\displaystyle</span>` class. Doing so might cause the line to be taller, but
+</span><span class='line'>will cause exponents and indices to be displayed correctly.
+</span><span class='line'>
+</span><span class='line'>For example the sum notation inline looks like this: <span class="s">$</span><span class="nv">\sum</span><span class="nb">_{i </span><span class="o">=</span><span class="nb"> </span><span class="m">0</span><span class="nb">}^{k}{x</span><span class="o">(</span><span class="nb">i</span><span class="o">)</span><span class="nb">}</span><span class="s">$</span>
+</span><span class='line'>
+</span><span class='line'>Whereas in display math mode looks like this:
+</span><span class='line'><span class="sb">$$</span><span class="nv">\sum</span><span class="nb">_{i </span><span class="o">=</span><span class="nb"> </span><span class="m">0</span><span class="nb">}^{k}{x</span><span class="o">(</span><span class="nb">i</span><span class="o">)</span><span class="nb">}</span><span class="s">$$</span>
+</span><span class='line'>
+</span><span class='line'>The displaymath style in normal math mode (inline):
+</span><span class='line'><span class="s">$</span><span class="nv">\displaystyle</span><span class="nb">{</span><span class="nv">\sum</span><span class="nb">_{i </span><span class="o">=</span><span class="nb"> </span><span class="m">0</span><span class="nb">}^{k}{x</span><span class="o">(</span><span class="nb">i</span><span class="o">)</span><span class="nb">}}</span><span class="s">$</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">\section</span><span class="nb">{</span>Vectors<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'>Adding a vector notation (the arrow over a letter), is simply accomplished
+</span><span class='line'>with the <span class="k">\verb</span>`<span class="k">\vec</span>` command:
+</span><span class='line'>
+</span><span class='line'><span class="sb">$$</span><span class="o">(</span><span class="nv">\vec</span><span class="nb">{i}, </span><span class="nv">\vec</span><span class="nb">{j}</span><span class="o">)</span><span class="s">$$</span>
+</span><span class='line'>
+</span><span class='line'>However, the proportions on <span class="s">$</span><span class="nv">\vec</span><span class="nb">{AB}</span><span class="s">$</span> are lost. To remedy to this problem,
+</span><span class='line'>it&#39;s possible to use another command <span class="k">\verb</span>`<span class="k">\overrightarrow</span>` at the cost of the
+</span><span class='line'>command&#39;s semantic name.
+</span><span class='line'>
+</span><span class='line'><span class="sb">$$</span><span class="nv">\overrightarrow</span><span class="nb">{AB} </span><span class="o">+</span><span class="nb"> </span><span class="nv">\overrightarrow</span><span class="nb">{BC} </span><span class="o">=</span><span class="nb"> </span><span class="nv">\overrightarrow</span><span class="nb">{AC}</span><span class="s">$$</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p><a href="/downloads/code/02-03-example.pdf">Download</a> the pdf version of this document
+to see the result.</p>
 ]]></content>
   </entry>
   
