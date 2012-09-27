@@ -4,7 +4,7 @@
   <title><![CDATA[TUGA OSSIG]]></title>
   <link href="http://tuga-ossig.github.com/atom.xml" rel="self"/>
   <link href="http://tuga-ossig.github.com/"/>
-  <updated>2012-09-15T02:22:57+02:00</updated>
+  <updated>2012-09-27T03:08:03+02:00</updated>
   <id>http://tuga-ossig.github.com/</id>
   <author>
     <name><![CDATA[Joe R. Nassimian]]></name>
@@ -12,6 +12,951 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[session-03]]></title>
+    <link href="http://tuga-ossig.github.com/blog/2012/09/18/session-03/"/>
+    <updated>2012-09-18T00:00:00+02:00</updated>
+    <id>http://tuga-ossig.github.com/blog/2012/09/18/session-03</id>
+    <content type="html"><![CDATA[<p>We covered inserting different types of hyperlinks, then looked at how pictures
+can be inserted in documents using the graphicx package. We finished off by
+looking at some more beamer specific concepts like how to structure beamer presentations and how layout and color themes can be applied.</p>
+
+<!-- more -->
+
+
+<p>This was done using a portable MikTex distribution, with the texWorks editor.
+This will change the coming time, as a portable version of texlive 2012 will
+be made available, with the texmaker editor.</p>
+
+<h2>Latex: Hyperlinks</h2>
+
+<figure class='code'><figcaption><span>[Hyperlinks in documents] [] (03-01-example.tex)</span> <a href='http://tuga-ossig.github.com/downloads/code/03-01-example.tex'>download</a></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+<span class='line-number'>65</span>
+<span class='line-number'>66</span>
+<span class='line-number'>67</span>
+<span class='line-number'>68</span>
+<span class='line-number'>69</span>
+<span class='line-number'>70</span>
+<span class='line-number'>71</span>
+<span class='line-number'>72</span>
+<span class='line-number'>73</span>
+<span class='line-number'>74</span>
+<span class='line-number'>75</span>
+<span class='line-number'>76</span>
+<span class='line-number'>77</span>
+<span class='line-number'>78</span>
+<span class='line-number'>79</span>
+<span class='line-number'>80</span>
+<span class='line-number'>81</span>
+<span class='line-number'>82</span>
+<span class='line-number'>83</span>
+<span class='line-number'>84</span>
+<span class='line-number'>85</span>
+<span class='line-number'>86</span>
+<span class='line-number'>87</span>
+<span class='line-number'>88</span>
+<span class='line-number'>89</span>
+<span class='line-number'>90</span>
+<span class='line-number'>91</span>
+<span class='line-number'>92</span>
+<span class='line-number'>93</span>
+</pre></td><td class='code'><pre><code class='latex'><span class='line'><span class="k">\documentclass</span><span class="na">[a4paper]</span><span class="nb">{</span>article<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">\usepackage</span><span class="na">[utf8]</span><span class="nb">{</span>inputenc<span class="nb">}</span>
+</span><span class='line'><span class="k">\usepackage</span><span class="na">[T1]</span><span class="nb">{</span>fontenc<span class="nb">}</span>
+</span><span class='line'><span class="k">\usepackage</span><span class="na">[ngerman]</span><span class="nb">{</span>babel<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">\usepackage</span><span class="nb">{</span>amsmath<span class="nb">}</span>
+</span><span class='line'><span class="k">\usepackage</span><span class="nb">{</span>amssymb<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">\usepackage</span><span class="nb">{</span>hyperref<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">\author</span><span class="nb">{</span>Anon Ymous<span class="nb">}</span>
+</span><span class='line'><span class="k">\date</span><span class="nb">{</span><span class="k">\today</span><span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">\title</span><span class="nb">{</span>Hyperlinks<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">\maketitle</span>
+</span><span class='line'><span class="k">\tableofcontents</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">\section</span><span class="nb">{</span>Basic<span class="nb">}</span>
+</span><span class='line'><span class="k">\LaTeX</span> enables typesetting of hyperlinks through a package called
+</span><span class='line'><span class="k">\textbf</span><span class="nb">{</span>hyperref<span class="nb">}</span>.
+</span><span class='line'>This works with pdflatex which is what we&#39;ve been using so far.
+</span><span class='line'>
+</span><span class='line'>If you use it, you will be able to include interactive links and all your
+</span><span class='line'>intra-document references (like the table of contents) will be turned into
+</span><span class='line'>hyperlinks.
+</span><span class='line'>
+</span><span class='line'>All you need to do in order to start playing with hyperlinks in latex, is to
+</span><span class='line'>include <span class="k">\verb</span>`<span class="k">\usepackage</span><span class="nb">{</span>hyperref<span class="nb">}</span>` in the preamble.
+</span><span class='line'>
+</span><span class='line'><span class="k">\subsection</span><span class="nb">{</span>URL<span class="nb">}</span>
+</span><span class='line'><span class="k">\url</span><span class="nb">{</span>http://en.wikibooks.org/wiki/LaTeX/Hyperlinks<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'>It&#39;s often useful in documents to include a reference to other documents online.
+</span><span class='line'>You can pass your link as an argument of the <span class="k">\verb</span>`<span class="k">\url</span>` command, i.e.
+</span><span class='line'><span class="k">\verb</span>`<span class="k">\url</span><span class="nb">{</span>http://en.wikibooks.org/wiki/LaTeX/Hyperlinks<span class="nb">}</span>` and it does
+</span><span class='line'>exactly that.
+</span><span class='line'>
+</span><span class='line'>Now clicking on the link will open your default browser and load the link for
+</span><span class='line'>you which is good enough for now.
+</span><span class='line'>
+</span><span class='line'>Notice that the URL is displayed using a monospace font.
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="k">\subsection</span><span class="nb">{</span>Links with description<span class="nb">}</span>
+</span><span class='line'><span class="k">\href</span><span class="nb">{</span>http://en.wikibooks.org/wiki/LaTeX/Hyperlinks<span class="nb">}{</span><span class="k">\LaTeX</span><span class="nb">{}</span> Hyperlinks<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'>Being able to link to other documents online is nice, but sometimes it would
+</span><span class='line'>be more desirable to have a piece of text describing the link as the
+</span><span class='line'>interactive link.
+</span><span class='line'>
+</span><span class='line'>This is accomplished using the <span class="k">\verb</span>`<span class="k">\href</span><span class="nb">{</span>url<span class="nb">}{</span>description<span class="nb">}</span>` command, which
+</span><span class='line'>takes your link&#39;s address as first argument, and the description as second.
+</span><span class='line'>
+</span><span class='line'>In this example, <span class="k">\textbf</span><span class="nb">{</span><span class="k">\LaTeX</span><span class="nb">{}</span> Hyperlinks<span class="nb">}</span> is the description,
+</span><span class='line'>and is shown instead of the address in the standard document font, but still
+</span><span class='line'>clicking on the text, would have the previous behavior: opening the link in the default browser.
+</span><span class='line'>
+</span><span class='line'><span class="k">\section</span><span class="nb">{</span>Advanced<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">\subsection</span><span class="nb">{</span>email addresses<span class="nb">}</span>
+</span><span class='line'><span class="k">\href</span><span class="nb">{</span>mailto:my<span class="nb">_</span>address@example.com<span class="nb">}{</span>my<span class="k">\_</span>address@example.com<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'>You can use the mailto URI scheme with your email address in order to create
+</span><span class='line'>a link. Clicking the link will open the default email client, with a new
+</span><span class='line'>empty message and the address in the <span class="k">\textit</span><span class="nb">{</span>To:<span class="nb">}</span> field.
+</span><span class='line'>
+</span><span class='line'>If you want people to be able to click on your email address to send you a
+</span><span class='line'>message, all you need to do is prefix your email address with <span class="k">\texttt</span><span class="nb">{</span>mailto:<span class="nb">}</span>
+</span><span class='line'>like in the example, and rewrite your email address in the description,
+</span><span class='line'>escaping special characters with <span class="k">\verb</span>`<span class="k">\`</span> like the underscore in the example.
+</span><span class='line'>
+</span><span class='line'>For more technical information concerning the mailto URI scheme, take a look at
+</span><span class='line'>the <span class="k">\href</span><span class="nb">{</span>http://en.wikipedia.org/wiki/Mailto<span class="nb">}{</span>mailto page<span class="nb">}</span> on wikipedia.
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="k">\subsection</span><span class="nb">{</span>Future<span class="nb">}</span>
+</span><span class='line'>You might have noticed that your table of contents is now interactive, but also
+</span><span class='line'>that links have a red boarder around them, rendering the table of content
+</span><span class='line'>ugly for on-screen displaying.
+</span><span class='line'>
+</span><span class='line'>We&#39;ll see next time how that can be customized using the <span class="k">\verb</span>`<span class="k">\hypersetup</span>`
+</span><span class='line'>command in the preamble. You can read more about this in the
+</span><span class='line'><span class="k">\href</span><span class="nb">{</span>http://en.wikibooks.org/wiki/LaTeX/Hyperlinks#Customization<span class="nb">}</span>
+</span><span class='line'><span class="nb">{</span>customization<span class="nb">}</span> section of the Hyperlinks chapter in the <span class="k">\LaTeX</span> wikibook.
+</span><span class='line'>
+</span><span class='line'>We&#39;ll also cover next time intra-document references and labels.
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><a href="http://tuga-ossig.github.com/downloads/code/03-01-example.pdf">Download</a> the pdf version of this document
+to see the result.</p>
+
+<h2>Latex: Graphics</h2>
+
+<figure class='code'><figcaption><span>[Graphics in documents] [] (03-02-example.tex)</span> <a href='http://tuga-ossig.github.com/downloads/code/03-02-example.tex'>download</a></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+<span class='line-number'>65</span>
+<span class='line-number'>66</span>
+<span class='line-number'>67</span>
+<span class='line-number'>68</span>
+<span class='line-number'>69</span>
+<span class='line-number'>70</span>
+<span class='line-number'>71</span>
+<span class='line-number'>72</span>
+<span class='line-number'>73</span>
+<span class='line-number'>74</span>
+<span class='line-number'>75</span>
+<span class='line-number'>76</span>
+<span class='line-number'>77</span>
+<span class='line-number'>78</span>
+<span class='line-number'>79</span>
+<span class='line-number'>80</span>
+<span class='line-number'>81</span>
+<span class='line-number'>82</span>
+<span class='line-number'>83</span>
+<span class='line-number'>84</span>
+<span class='line-number'>85</span>
+<span class='line-number'>86</span>
+<span class='line-number'>87</span>
+<span class='line-number'>88</span>
+<span class='line-number'>89</span>
+<span class='line-number'>90</span>
+<span class='line-number'>91</span>
+<span class='line-number'>92</span>
+<span class='line-number'>93</span>
+<span class='line-number'>94</span>
+<span class='line-number'>95</span>
+<span class='line-number'>96</span>
+<span class='line-number'>97</span>
+<span class='line-number'>98</span>
+<span class='line-number'>99</span>
+<span class='line-number'>100</span>
+<span class='line-number'>101</span>
+<span class='line-number'>102</span>
+<span class='line-number'>103</span>
+<span class='line-number'>104</span>
+<span class='line-number'>105</span>
+<span class='line-number'>106</span>
+<span class='line-number'>107</span>
+<span class='line-number'>108</span>
+<span class='line-number'>109</span>
+<span class='line-number'>110</span>
+<span class='line-number'>111</span>
+<span class='line-number'>112</span>
+<span class='line-number'>113</span>
+<span class='line-number'>114</span>
+<span class='line-number'>115</span>
+<span class='line-number'>116</span>
+<span class='line-number'>117</span>
+<span class='line-number'>118</span>
+<span class='line-number'>119</span>
+<span class='line-number'>120</span>
+<span class='line-number'>121</span>
+<span class='line-number'>122</span>
+<span class='line-number'>123</span>
+<span class='line-number'>124</span>
+<span class='line-number'>125</span>
+<span class='line-number'>126</span>
+<span class='line-number'>127</span>
+<span class='line-number'>128</span>
+<span class='line-number'>129</span>
+<span class='line-number'>130</span>
+<span class='line-number'>131</span>
+<span class='line-number'>132</span>
+<span class='line-number'>133</span>
+<span class='line-number'>134</span>
+<span class='line-number'>135</span>
+<span class='line-number'>136</span>
+<span class='line-number'>137</span>
+<span class='line-number'>138</span>
+<span class='line-number'>139</span>
+<span class='line-number'>140</span>
+<span class='line-number'>141</span>
+<span class='line-number'>142</span>
+<span class='line-number'>143</span>
+<span class='line-number'>144</span>
+<span class='line-number'>145</span>
+<span class='line-number'>146</span>
+<span class='line-number'>147</span>
+<span class='line-number'>148</span>
+<span class='line-number'>149</span>
+<span class='line-number'>150</span>
+<span class='line-number'>151</span>
+<span class='line-number'>152</span>
+<span class='line-number'>153</span>
+<span class='line-number'>154</span>
+<span class='line-number'>155</span>
+<span class='line-number'>156</span>
+<span class='line-number'>157</span>
+<span class='line-number'>158</span>
+<span class='line-number'>159</span>
+<span class='line-number'>160</span>
+<span class='line-number'>161</span>
+<span class='line-number'>162</span>
+<span class='line-number'>163</span>
+<span class='line-number'>164</span>
+<span class='line-number'>165</span>
+<span class='line-number'>166</span>
+<span class='line-number'>167</span>
+<span class='line-number'>168</span>
+<span class='line-number'>169</span>
+<span class='line-number'>170</span>
+<span class='line-number'>171</span>
+<span class='line-number'>172</span>
+<span class='line-number'>173</span>
+<span class='line-number'>174</span>
+<span class='line-number'>175</span>
+<span class='line-number'>176</span>
+<span class='line-number'>177</span>
+<span class='line-number'>178</span>
+<span class='line-number'>179</span>
+<span class='line-number'>180</span>
+<span class='line-number'>181</span>
+<span class='line-number'>182</span>
+</pre></td><td class='code'><pre><code class='latex'><span class='line'><span class="k">\documentclass</span><span class="na">[a4paper]</span><span class="nb">{</span>article<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">\usepackage</span><span class="na">[utf8]</span><span class="nb">{</span>inputenc<span class="nb">}</span>
+</span><span class='line'><span class="k">\usepackage</span><span class="na">[T1]</span><span class="nb">{</span>fontenc<span class="nb">}</span>
+</span><span class='line'><span class="k">\usepackage</span><span class="na">[ngerman]</span><span class="nb">{</span>babel<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">\usepackage</span><span class="nb">{</span>amsmath<span class="nb">}</span>
+</span><span class='line'><span class="k">\usepackage</span><span class="nb">{</span>amssymb<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">\usepackage</span><span class="nb">{</span>hyperref<span class="nb">}</span>
+</span><span class='line'><span class="k">\usepackage</span><span class="nb">{</span>graphicx<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">\graphicspath</span><span class="nb">{{</span>pics/<span class="nb">}}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">\author</span><span class="nb">{</span>Anon Ymous<span class="nb">}</span>
+</span><span class='line'><span class="k">\date</span><span class="nb">{</span><span class="k">\today</span><span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">\title</span><span class="nb">{</span>Graphics<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">\maketitle</span>
+</span><span class='line'><span class="k">\tableofcontents</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">\section</span><span class="nb">{</span>Basic<span class="nb">}</span>
+</span><span class='line'><span class="k">\LaTeX</span> include a package to simplify the insertion of graphics in your document.
+</span><span class='line'>All you have to do is make sure the graphics you have are in the right format.
+</span><span class='line'>
+</span><span class='line'>We&#39;ll be only covering the process using the pdflatex driver, which has been
+</span><span class='line'>recommended from the start.
+</span><span class='line'>
+</span><span class='line'>All you need to do in order to start playing with graphics in <span class="k">\LaTeX</span>, is to
+</span><span class='line'>include <span class="k">\verb</span>`<span class="k">\usepackage</span><span class="nb">{</span>graphicx<span class="nb">}</span>` in the preamble.
+</span><span class='line'>
+</span><span class='line'><span class="k">\subsection</span><span class="nb">{</span>Graphics path<span class="nb">}</span>
+</span><span class='line'>Latex will always look for your pictures in your document&#39;s directory, and
+</span><span class='line'>sometimes it&#39;s good enough.
+</span><span class='line'>
+</span><span class='line'>However sometimes it&#39;s desirable to have the picture in a sub-folder to keep
+</span><span class='line'>things organized, specially if you intend to include several pictures.
+</span><span class='line'>
+</span><span class='line'>There is only one pragmatic and practical way to accomplish this in <span class="k">\LaTeX</span>:
+</span><span class='line'>The <span class="k">\verb</span>`<span class="k">\graphicspath</span>` command.
+</span><span class='line'>
+</span><span class='line'>This is considered as obsolete according to the
+</span><span class='line'><span class="k">\href</span><span class="nb">{</span>http://www.ctan.org/tex-archive/info/l2tabu<span class="nb">}{</span>l2tabu<span class="nb">}</span> document, but
+</span><span class='line'>the arguments seem to be coming from a non-pragmatic point of view, with no
+</span><span class='line'>viable alternative solution for people who just want to include graphics.
+</span><span class='line'>
+</span><span class='line'>We recommend however to keep your picture folders relative to your working
+</span><span class='line'>directory.
+</span><span class='line'>
+</span><span class='line'>Here in this document, we&#39;ll be storing pictures in the sub-folder <span class="k">\texttt</span><span class="nb">{</span>pics<span class="nb">}</span>
+</span><span class='line'>so the command becomes <span class="k">\verb</span>`<span class="k">\graphicspath</span><span class="nb">{{</span>pics/<span class="nb">}}</span>`. The extra curly braces
+</span><span class='line'>is because you might want to include several graphics path, and so to avoid
+</span><span class='line'>ambiguity, you have to enclose paths in curly braces.
+</span><span class='line'>
+</span><span class='line'>In future documents you might have pictures and figures to include in your
+</span><span class='line'>documents, and you might want to keep them in two different sub-folders like
+</span><span class='line'><span class="k">\textit</span><span class="nb">{</span>pics<span class="nb">}</span> and <span class="k">\textit</span><span class="nb">{</span>figures<span class="nb">}</span>, the command would then be:
+</span><span class='line'><span class="k">\verb</span>`<span class="k">\graphicspath</span><span class="nb">{{</span>pics/<span class="nb">}{</span>figures/<span class="nb">}}</span>`
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="k">\subsection</span><span class="nb">{</span>Inserting the first picture<span class="nb">}</span>
+</span><span class='line'><span class="k">\includegraphics</span><span class="nb">{</span>lonely-tree<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'>That&#39;s all it take to insert a picture! The name of the picture without the
+</span><span class='line'>extension. <span class="k">\LaTeX</span> will look for a picture with the name lonely-tree, in the
+</span><span class='line'>current directory or the path specified by <span class="k">\verb</span>`<span class="k">\graphicspath</span>`, in the formats
+</span><span class='line'>supported by pdflatex in our case.
+</span><span class='line'>
+</span><span class='line'>For reference purposes those formats are: jpg, png, pdf and eps.
+</span><span class='line'>
+</span><span class='line'>Not all tex installations can handle filenames with spaces. So it&#39;s better to
+</span><span class='line'>avoid them.
+</span><span class='line'>
+</span><span class='line'>Notice that latex doesn&#39;t resize the picture to fit the document&#39;s size, and
+</span><span class='line'>that is not what you want most of the time, however the graphicx package has
+</span><span class='line'>some tools we&#39;ll cover in the next section to remedy that problem.
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="k">\section</span><span class="nb">{</span>Advanced<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">\subsection</span><span class="nb">{</span>Scaling, resizing, rotating and trimming!<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">\subsubsection</span><span class="nb">{</span>Scaling<span class="nb">}</span>
+</span><span class='line'><span class="k">\includegraphics</span><span class="na">[scale=0.2]</span><span class="nb">{</span>lonely-tree<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'>You have the possibility to scale an image by a desired scale factor.
+</span><span class='line'>Here we multiply the dimensions by a factor of 0.2, or <span class="s">$</span><span class="nv">\frac</span><span class="nb">{</span><span class="m">1</span><span class="nb">}{</span><span class="m">5</span><span class="nb">}</span><span class="s">$</span>,
+</span><span class='line'>effectively reducing the size by 5.
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="k">\subsubsection</span><span class="nb">{</span>Resizing<span class="nb">}</span>
+</span><span class='line'><span class="k">\includegraphics</span><span class="na">[width=5cm]</span><span class="nb">{</span>lonely-tree<span class="nb">}</span>
+</span><span class='line'><span class="k">\includegraphics</span><span class="na">[height=5cm]</span><span class="nb">{</span>lonely-tree<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'>There might be a time you might want to scale a picture to a specific size, but
+</span><span class='line'>not necessarily know the factor by which you would have to multiply for scaling.
+</span><span class='line'>The solution here is using the <span class="k">\textit</span><span class="nb">{</span>width<span class="nb">}</span> and <span class="k">\textit</span><span class="nb">{</span>height<span class="nb">}</span> options of
+</span><span class='line'>the <span class="k">\verb</span>`<span class="k">\includegrahics</span>` command.
+</span><span class='line'>
+</span><span class='line'>The above examples here set either the width or the height, and the picture
+</span><span class='line'>is scaled down to that size, respecting the aspect ratio.
+</span><span class='line'>
+</span><span class='line'><span class="k">\includegraphics</span><span class="na">[width=5cm,height=5cm]</span><span class="nb">{</span>lonely-tree<span class="nb">}</span>
+</span><span class='line'><span class="k">\includegraphics</span><span class="na">[width=5cm,height=5cm,keepaspectratio=true]</span><span class="nb">{</span>lonely-tree<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'>However, if both height and width are set, the image will be scaled according
+</span><span class='line'>to both height and width, and in case your original aspect ratio, is different
+</span><span class='line'>from the one specified through the <span class="k">\textit</span><span class="nb">{</span>width<span class="nb">}</span> and <span class="k">\textit</span><span class="nb">{</span>height<span class="nb">}</span> option,
+</span><span class='line'>the picture will distort.
+</span><span class='line'>
+</span><span class='line'>If that behavior is undesirable, it&#39;s possible to use the
+</span><span class='line'><span class="k">\textit</span><span class="nb">{</span>keepaspectratio=true<span class="nb">}</span> option in order to scale the picture according to
+</span><span class='line'>both width and height, and still keep the aspect ratio of the picture.
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="k">\subsubsection</span><span class="nb">{</span>Rotating<span class="nb">}</span>
+</span><span class='line'><span class="k">\includegraphics</span><span class="na">[width=5cm,angle=90]</span><span class="nb">{</span>lonely-tree<span class="nb">}</span>
+</span><span class='line'><span class="k">\includegraphics</span><span class="na">[width=5cm,angle=180]</span><span class="nb">{</span>lonely-tree<span class="nb">}</span>
+</span><span class='line'><span class="k">\includegraphics</span><span class="na">[width=5cm,angle=270]</span><span class="nb">{</span>lonely-tree<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'>The <span class="k">\textit</span><span class="nb">{</span>angle<span class="nb">}</span> option specifies by how much to rotate the image in degrees
+</span><span class='line'>counted <span class="k">\textbf</span><span class="nb">{</span>counter-clockwise<span class="nb">}</span>.
+</span><span class='line'>
+</span><span class='line'>And as you can see, you can accumulate the scaling and rotating options.
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="k">\subsubsection</span><span class="nb">{</span>Trimming<span class="nb">}</span>
+</span><span class='line'><span class="k">\includegraphics</span><span class="na">[height=5cm,trim=10mm 5mm 90mm 0mm,clip]</span><span class="nb">{</span>lonely-tree<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'>The <span class="k">\textit</span><span class="nb">{</span>trim=l b r t<span class="nb">}</span> option specifies by how much to trim on each side of
+</span><span class='line'>your picture, and the <span class="k">\textit</span><span class="nb">{</span>clip<span class="nb">}</span> option applies the trimming, effectively
+</span><span class='line'>cropping your picture.
+</span><span class='line'>
+</span><span class='line'>This option will crop the included image by the lengths specified:
+</span><span class='line'><span class="k">\textbf</span><span class="nb">{</span>l<span class="nb">}</span> from the <span class="k">\textit</span><span class="nb">{</span>left<span class="nb">}</span>, <span class="k">\textbf</span><span class="nb">{</span>b<span class="nb">}</span> from the <span class="k">\textit</span><span class="nb">{</span>bottom<span class="nb">}</span>,
+</span><span class='line'><span class="k">\textbf</span><span class="nb">{</span>r<span class="nb">}</span> from the <span class="k">\textit</span><span class="nb">{</span>right<span class="nb">}</span>, and <span class="k">\textbf</span><span class="nb">{</span>t<span class="nb">}</span> from the <span class="k">\textit</span><span class="nb">{</span>top<span class="nb">}</span>.
+</span><span class='line'>
+</span><span class='line'>Note that the order for trimming is always counter-clockwise, starting on the
+</span><span class='line'>left.
+</span><span class='line'>
+</span><span class='line'>You can accumulate scaling, rotating, and trimming, but notice that every time
+</span><span class='line'>while using those options, it applies to the original picture&#39;s state.
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="k">\subsection</span><span class="nb">{</span>Picture border<span class="nb">}</span>
+</span><span class='line'><span class="k">\framebox</span><span class="nb">{</span><span class="k">\includegraphics</span><span class="na">[width=5cm]</span><span class="nb">{</span>lonely-tree<span class="nb">}}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">\setlength\fboxsep</span><span class="nb">{</span>0pt<span class="nb">}</span>
+</span><span class='line'><span class="k">\framebox</span><span class="nb">{</span><span class="k">\includegraphics</span><span class="na">[width=5cm]</span><span class="nb">{</span>lonely-tree<span class="nb">}}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">\setlength\fboxsep</span><span class="nb">{</span>1pt<span class="nb">}</span>
+</span><span class='line'><span class="k">\setlength\fboxrule</span><span class="nb">{</span>1pt<span class="nb">}</span>
+</span><span class='line'><span class="k">\framebox</span><span class="nb">{</span><span class="k">\includegraphics</span><span class="na">[width=5cm]</span><span class="nb">{</span>lonely-tree<span class="nb">}}</span>
+</span><span class='line'>
+</span><span class='line'>The concept of boxes will be studied later, but right now, in order to have a
+</span><span class='line'>border around our picture, we&#39;ll be using a <span class="k">\textbf</span><span class="nb">{</span>framebox<span class="nb">}</span>, also shortened
+</span><span class='line'>as <span class="k">\textbf</span><span class="nb">{</span>fbox<span class="nb">}</span>.
+</span><span class='line'>
+</span><span class='line'>To set a border around a picture simply use the <span class="k">\verb</span>`<span class="k">\framebox</span>` command,
+</span><span class='line'>passing your <span class="k">\verb</span>`<span class="k">\includegraphics</span>` command as an argument like in the example.
+</span><span class='line'>
+</span><span class='line'>There are two aspects of a framebox we can adjust:
+</span><span class='line'><span class="k">\begin</span><span class="nb">{</span>itemize<span class="nb">}</span>
+</span><span class='line'>    <span class="k">\item</span> The margin between the content and the frame (or border), set in
+</span><span class='line'>    <span class="k">\verb</span>`<span class="k">\fboxsep</span>`, setting this to 0pts, will snap the border on the picture.
+</span><span class='line'>    <span class="k">\item</span> The frame or border thickness, set in <span class="k">\verb</span>`<span class="k">\fboxrule</span>`.
+</span><span class='line'><span class="k">\end</span><span class="nb">{</span>itemize<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'>Those aspects can be both set and modified using the <span class="k">\verb</span>`<span class="k">\setlength</span>` command
+</span><span class='line'>like in the examples above.
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>Using graphics <span class="k">\LaTeX</span> can be fun but also tricky. For more information
+</span><span class='line'>concerning the graphics in <span class="k">\LaTeX</span>, you should have a look in the
+</span><span class='line'><span class="k">\href</span><span class="nb">{</span>official graphics guide<span class="nb">}</span>
+</span><span class='line'><span class="nb">{</span>http://www.ctan.org/tex-archive/macros/latex/required/graphics/grfguide.pdf<span class="nb">}</span>.
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><a href="http://tuga-ossig.github.com/downloads/code/03-02-example.pdf">Download</a> the pdf version of this document
+to see the result.</p>
+
+<h2>Beamer: More structure and Themes</h2>
+
+<figure class='code'><figcaption><span>[Beamer structure and themes] [] (03-03-example.tex)</span> <a href='http://tuga-ossig.github.com/downloads/code/03-03-example.tex'>download</a></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+<span class='line-number'>65</span>
+<span class='line-number'>66</span>
+<span class='line-number'>67</span>
+<span class='line-number'>68</span>
+<span class='line-number'>69</span>
+<span class='line-number'>70</span>
+<span class='line-number'>71</span>
+<span class='line-number'>72</span>
+<span class='line-number'>73</span>
+<span class='line-number'>74</span>
+<span class='line-number'>75</span>
+<span class='line-number'>76</span>
+<span class='line-number'>77</span>
+<span class='line-number'>78</span>
+<span class='line-number'>79</span>
+<span class='line-number'>80</span>
+<span class='line-number'>81</span>
+<span class='line-number'>82</span>
+<span class='line-number'>83</span>
+<span class='line-number'>84</span>
+<span class='line-number'>85</span>
+<span class='line-number'>86</span>
+<span class='line-number'>87</span>
+<span class='line-number'>88</span>
+<span class='line-number'>89</span>
+<span class='line-number'>90</span>
+<span class='line-number'>91</span>
+<span class='line-number'>92</span>
+<span class='line-number'>93</span>
+<span class='line-number'>94</span>
+<span class='line-number'>95</span>
+<span class='line-number'>96</span>
+<span class='line-number'>97</span>
+<span class='line-number'>98</span>
+<span class='line-number'>99</span>
+<span class='line-number'>100</span>
+<span class='line-number'>101</span>
+<span class='line-number'>102</span>
+<span class='line-number'>103</span>
+<span class='line-number'>104</span>
+<span class='line-number'>105</span>
+<span class='line-number'>106</span>
+<span class='line-number'>107</span>
+<span class='line-number'>108</span>
+<span class='line-number'>109</span>
+<span class='line-number'>110</span>
+<span class='line-number'>111</span>
+<span class='line-number'>112</span>
+<span class='line-number'>113</span>
+<span class='line-number'>114</span>
+<span class='line-number'>115</span>
+<span class='line-number'>116</span>
+<span class='line-number'>117</span>
+<span class='line-number'>118</span>
+<span class='line-number'>119</span>
+<span class='line-number'>120</span>
+<span class='line-number'>121</span>
+<span class='line-number'>122</span>
+<span class='line-number'>123</span>
+<span class='line-number'>124</span>
+<span class='line-number'>125</span>
+<span class='line-number'>126</span>
+<span class='line-number'>127</span>
+<span class='line-number'>128</span>
+<span class='line-number'>129</span>
+<span class='line-number'>130</span>
+<span class='line-number'>131</span>
+<span class='line-number'>132</span>
+<span class='line-number'>133</span>
+<span class='line-number'>134</span>
+<span class='line-number'>135</span>
+<span class='line-number'>136</span>
+<span class='line-number'>137</span>
+<span class='line-number'>138</span>
+<span class='line-number'>139</span>
+<span class='line-number'>140</span>
+<span class='line-number'>141</span>
+<span class='line-number'>142</span>
+<span class='line-number'>143</span>
+<span class='line-number'>144</span>
+<span class='line-number'>145</span>
+<span class='line-number'>146</span>
+<span class='line-number'>147</span>
+<span class='line-number'>148</span>
+<span class='line-number'>149</span>
+<span class='line-number'>150</span>
+<span class='line-number'>151</span>
+<span class='line-number'>152</span>
+<span class='line-number'>153</span>
+<span class='line-number'>154</span>
+<span class='line-number'>155</span>
+<span class='line-number'>156</span>
+<span class='line-number'>157</span>
+<span class='line-number'>158</span>
+<span class='line-number'>159</span>
+<span class='line-number'>160</span>
+<span class='line-number'>161</span>
+<span class='line-number'>162</span>
+<span class='line-number'>163</span>
+<span class='line-number'>164</span>
+<span class='line-number'>165</span>
+<span class='line-number'>166</span>
+<span class='line-number'>167</span>
+<span class='line-number'>168</span>
+<span class='line-number'>169</span>
+<span class='line-number'>170</span>
+<span class='line-number'>171</span>
+<span class='line-number'>172</span>
+<span class='line-number'>173</span>
+<span class='line-number'>174</span>
+<span class='line-number'>175</span>
+</pre></td><td class='code'><pre><code class='latex'><span class='line'><span class="k">\documentclass</span><span class="nb">{</span>beamer<span class="nb">}</span>
+</span><span class='line'><span class="k">\mode</span>&lt;presentation&gt;
+</span><span class='line'><span class="nb">{</span>
+</span><span class='line'>    <span class="k">\usetheme</span><span class="nb">{</span>Copenhagen<span class="nb">}</span>
+</span><span class='line'>    <span class="k">\usecolortheme</span><span class="nb">{</span>beaver<span class="nb">}</span>
+</span><span class='line'><span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">\AtBeginSection</span><span class="na">[]</span>
+</span><span class='line'><span class="nb">{</span>
+</span><span class='line'>    <span class="k">\begin</span><span class="nb">{</span>frame<span class="nb">}{</span>Table of Contents<span class="nb">}</span>
+</span><span class='line'>        <span class="k">\tableofcontents</span><span class="na">[currentsection]</span>
+</span><span class='line'>    <span class="k">\end</span><span class="nb">{</span>frame<span class="nb">}</span>
+</span><span class='line'><span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">\usepackage</span><span class="na">[utf8]</span><span class="nb">{</span>inputenc<span class="nb">}</span>
+</span><span class='line'><span class="k">\usepackage</span><span class="na">[T1]</span><span class="nb">{</span>fontenc<span class="nb">}</span>
+</span><span class='line'><span class="k">\usepackage</span><span class="na">[ngerman]</span><span class="nb">{</span>babel<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">\usepackage</span><span class="nb">{</span>amsmath<span class="nb">}</span>
+</span><span class='line'><span class="k">\usepackage</span><span class="nb">{</span>amssymb<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">\usepackage</span><span class="nb">{</span>hyperref<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">\author</span><span class="nb">{</span>Anon Ymous<span class="nb">}</span>
+</span><span class='line'><span class="k">\date</span><span class="nb">{</span><span class="k">\today</span><span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">\title</span><span class="nb">{</span>Beamer slides<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">\section</span><span class="nb">{</span>Beamer structure<span class="nb">}</span>
+</span><span class='line'><span class="k">\subsection</span><span class="nb">{</span>Sections and Subsections<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">\begin</span><span class="nb">{</span>frame<span class="nb">}</span>[fragile]
+</span><span class='line'>    <span class="k">\frametitle</span><span class="nb">{</span>Sections and subsections<span class="nb">}</span>
+</span><span class='line'>    <span class="k">\framesubtitle</span><span class="nb">{</span>Structuring frames<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'>    Sections and subsections help organize and structure your presentation:
+</span><span class='line'>    <span class="k">\begin</span><span class="nb">{</span>enumerate<span class="nb">}</span>
+</span><span class='line'>        <span class="k">\item</span>&lt;1-| alert@1&gt;
+</span><span class='line'>        <span class="k">\verb</span>`<span class="k">\section</span><span class="na">[Short Section Name]</span><span class="nb">{</span>Long Section Name<span class="nb">}</span>`
+</span><span class='line'>        <span class="k">\item</span>&lt;1-| alert@2&gt;
+</span><span class='line'>        <span class="k">\verb</span>`<span class="k">\subsection</span><span class="na">[Short Section Name]</span><span class="nb">{</span>Long Section Name<span class="nb">}</span>`
+</span><span class='line'>    <span class="k">\end</span><span class="nb">{</span>enumerate<span class="nb">}</span>
+</span><span class='line'>    <span class="k">\vfill</span>
+</span><span class='line'>    ``Short names&#39;&#39; go into slide headers; and ``Long names&#39;&#39; go into outlines.
+</span><span class='line'>    <span class="k">\vfill</span>
+</span><span class='line'><span class="k">\end</span><span class="nb">{</span>frame<span class="nb">}</span>
+</span><span class='line'><span class="k">\begin</span><span class="nb">{</span>frame<span class="nb">}</span>[fragile]
+</span><span class='line'>    <span class="k">\frametitle</span><span class="nb">{</span>Tips and tricks<span class="nb">}</span>
+</span><span class='line'>    <span class="k">\framesubtitle</span><span class="nb">{</span>Structuring Tips and Tricks<span class="nb">}</span>
+</span><span class='line'>    <span class="k">\begin</span><span class="nb">{</span>itemize<span class="nb">}</span>
+</span><span class='line'>        <span class="k">\item</span>&lt;1-| alert@1&gt;
+</span><span class='line'>        The sections and subsections will appear automatically in the
+</span><span class='line'>        presentation&#39;s outline.
+</span><span class='line'>        <span class="k">\item</span>&lt;1-| alert@2&gt;
+</span><span class='line'>        Use <span class="k">\verb</span>`<span class="k">\tableofcontents</span><span class="na">[section]</span>` to keep audience informed of
+</span><span class='line'>        your talk&#39;s general plan.
+</span><span class='line'>    <span class="k">\end</span><span class="nb">{</span>itemize<span class="nb">}</span>
+</span><span class='line'><span class="k">\end</span><span class="nb">{</span>frame<span class="nb">}</span>
+</span><span class='line'><span class="k">\begin</span><span class="nb">{</span>frame<span class="nb">}</span>[fragile]
+</span><span class='line'>    <span class="k">\frametitle</span><span class="nb">{</span>AtBeginSection<span class="nb">}</span>
+</span><span class='line'>    <span class="k">\framesubtitle</span><span class="nb">{</span>A presentational trick<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'>    Insert the following in the preamble:
+</span><span class='line'>    <span class="k">\begin</span><span class="nb">{</span>verbatim<span class="nb">}</span>
+</span><span class='line'>    <span class="k">\AtBeginSection</span><span class="na">[]</span>
+</span><span class='line'>    <span class="nb">{</span>
+</span><span class='line'>        <span class="k">\begin</span><span class="nb">{</span>frame<span class="nb">}{</span>Table of Contents<span class="nb">}</span>
+</span><span class='line'>            <span class="k">\tableofcontents</span><span class="na">[currentsection]</span>
+</span><span class='line'>        <span class="k">\end</span><span class="nb">{</span>frame<span class="nb">}</span>
+</span><span class='line'>    <span class="nb">}</span>
+</span><span class='line'>    <span class="k">\end</span><span class="nb">{</span>verbatim<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'>    You&#39;ll have at the beginning of every section an automatically inserted
+</span><span class='line'>    section outline, helping your audience to stay informed of progress.
+</span><span class='line'><span class="k">\end</span><span class="nb">{</span>frame<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">\subsection</span><span class="nb">{</span>Structuring guideline<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">\begin</span><span class="nb">{</span>frame<span class="nb">}</span>
+</span><span class='line'>    <span class="k">\frametitle</span><span class="nb">{</span>Structuring numbers<span class="nb">}</span>
+</span><span class='line'>    <span class="k">\begin</span><span class="nb">{</span>description<span class="nb">}</span>
+</span><span class='line'>        <span class="k">\item</span>&lt;1-| alert@1&gt;[presentation] ideally 3 sections, but not more then 4.
+</span><span class='line'>        <span class="k">\item</span>&lt;1-| alert@2&gt;[sections] ideally 3 subsections, but not more then 4.
+</span><span class='line'>        <span class="k">\item</span>&lt;1-| alert@3&gt;[sections] ideally have the same number of subsections.
+</span><span class='line'>        <span class="k">\item</span>&lt;1-| alert@4&gt;[subsections] ideally contain in average 7 frames,
+</span><span class='line'>        but not more then 15.
+</span><span class='line'>    <span class="k">\end</span><span class="nb">{</span>description<span class="nb">}</span>
+</span><span class='line'><span class="k">\end</span><span class="nb">{</span>frame<span class="nb">}</span>
+</span><span class='line'><span class="k">\begin</span><span class="nb">{</span>frame<span class="nb">}</span>
+</span><span class='line'>    <span class="k">\frametitle</span><span class="nb">{</span>Tip on displayed content<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'>    According to cognitive science studies, the human mind captures in
+</span><span class='line'>    average 4 concepts from a presentation slide, so this presentation is most
+</span><span class='line'>    probably a bad one in regard to this rule.
+</span><span class='line'><span class="k">\end</span><span class="nb">{</span>frame<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">\section</span><span class="nb">{</span>Beamer themes<span class="nb">}</span>
+</span><span class='line'><span class="k">\subsection</span><span class="nb">{</span>Theme structure<span class="nb">}</span>
+</span><span class='line'><span class="k">\begin</span><span class="nb">{</span>frame<span class="nb">}</span>
+</span><span class='line'>    <span class="k">\frametitle</span><span class="nb">{</span>Color themes, Inner themes, and Outer themes<span class="nb">}</span>
+</span><span class='line'>    <span class="k">\framesubtitle</span><span class="nb">{</span>What presentation themes are made of<span class="nb">}</span>
+</span><span class='line'>    <span class="k">\begin</span><span class="nb">{</span>description<span class="nb">}</span>
+</span><span class='line'>        <span class="k">\item</span>&lt;1-| alert@1&gt;[Color themes]
+</span><span class='line'>        controls colors for bullets, background, text, etc.
+</span><span class='line'>        <span class="k">\item</span>&lt;1-| alert@2&gt;[Fonts themes]
+</span><span class='line'>        controls which fonts or font attributes are used. Font colors of all
+</span><span class='line'>        text elements can be specified independently.
+</span><span class='line'>        <span class="k">\item</span>&lt;1-| alert@3&gt;[Inner themes]
+</span><span class='line'>        controls main title, environments, figures and tables, footnotes, etc.
+</span><span class='line'>        <span class="k">\item</span>&lt;1-| alert@4&gt;[Outer themes]
+</span><span class='line'>        control head-/foot-lines, sidebars, frame titles, etc.
+</span><span class='line'>    <span class="k">\end</span><span class="nb">{</span>description<span class="nb">}</span>
+</span><span class='line'><span class="k">\end</span><span class="nb">{</span>frame<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">\begin</span><span class="nb">{</span>frame<span class="nb">}</span>[fragile]
+</span><span class='line'>    <span class="k">\frametitle</span><span class="nb">{</span>Theme list<span class="nb">}</span>
+</span><span class='line'>    <span class="k">\framesubtitle</span><span class="nb">{</span>Some commonly used themes<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'>    default, AnnArbor, Antibes, Bergen, Berkeley, Berlin, Boadilla,
+</span><span class='line'>    CambridgeUS, Copenhagen, Darmstadt, Dresden, Frankfurt, Goettingen,
+</span><span class='line'>    Hannover, Ilmenau, JuanLesPins, Luebeck, Madrid, Malmoe, Marburg,
+</span><span class='line'>    Montpellier, PaloAlto, Pittsburgh, Rochester, Singapore, Szeged, Warsaw.
+</span><span class='line'>
+</span><span class='line'>    <span class="k">\vfill</span>
+</span><span class='line'>
+</span><span class='line'>    Setting theme: <span class="k">\verb</span>`<span class="k">\usetheme</span><span class="nb">{</span>theme name<span class="nb">}</span>`
+</span><span class='line'><span class="k">\end</span><span class="nb">{</span>frame<span class="nb">}</span>
+</span><span class='line'><span class="k">\begin</span><span class="nb">{</span>frame<span class="nb">}</span>[fragile]
+</span><span class='line'>    <span class="k">\frametitle</span><span class="nb">{</span>Color themes list<span class="nb">}</span>
+</span><span class='line'>    <span class="k">\framesubtitle</span><span class="nb">{</span>Some commonly used color themes<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'>    default, albatross, beaver, beetle, crane, dolphin, dove, fly, lily,
+</span><span class='line'>    orchid, rose, seagull, seahorse, whale, wolverine.
+</span><span class='line'>
+</span><span class='line'>    <span class="k">\vfill</span>
+</span><span class='line'>
+</span><span class='line'>    Setting color theme: <span class="k">\verb</span>`<span class="k">\usecolortheme</span><span class="nb">{</span>colorthemename<span class="nb">}</span>`
+</span><span class='line'><span class="k">\end</span><span class="nb">{</span>frame<span class="nb">}</span>
+</span><span class='line'><span class="k">\begin</span><span class="nb">{</span>frame<span class="nb">}</span>[fragile]
+</span><span class='line'>    <span class="k">\frametitle</span><span class="nb">{</span>Font themes list<span class="nb">}</span>
+</span><span class='line'>    <span class="k">\framesubtitle</span><span class="nb">{</span>Some commonly used fonts themes<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'>    default, professionalfonts, serif, structurebold, structureitalicserif,
+</span><span class='line'>    structuresmallcapsserif, structureitalicserif
+</span><span class='line'>
+</span><span class='line'>    <span class="k">\vfill</span>
+</span><span class='line'>
+</span><span class='line'>    Setting font themes: <span class="k">\verb</span>`<span class="k">\usefonttheme</span><span class="nb">{</span>fontthemename<span class="nb">}</span>`
+</span><span class='line'><span class="k">\end</span><span class="nb">{</span>frame<span class="nb">}</span>
+</span><span class='line'><span class="k">\begin</span><span class="nb">{</span>frame<span class="nb">}</span>[fragile]
+</span><span class='line'>    <span class="k">\frametitle</span><span class="nb">{</span>Inner themes list<span class="nb">}</span>
+</span><span class='line'>    <span class="k">\framesubtitle</span><span class="nb">{</span>Some commonly used inner themes<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'>    circles, inmargin, rectangles, and rounded
+</span><span class='line'>
+</span><span class='line'>    <span class="k">\vfill</span>
+</span><span class='line'>
+</span><span class='line'>    Setting inner themes: <span class="k">\verb</span>`<span class="k">\useinnertheme</span><span class="nb">{</span>innerthemename<span class="nb">}</span>`
+</span><span class='line'><span class="k">\end</span><span class="nb">{</span>frame<span class="nb">}</span>
+</span><span class='line'><span class="k">\begin</span><span class="nb">{</span>frame<span class="nb">}</span>[fragile]
+</span><span class='line'>    <span class="k">\frametitle</span><span class="nb">{</span>Outer themes list<span class="nb">}</span>
+</span><span class='line'>    <span class="k">\framesubtitle</span><span class="nb">{</span>Some commonly used outer themes<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'>    default, infolines, miniframes, smoothbars, sidebar, split, shadow, tree,
+</span><span class='line'>    smoothtree.
+</span><span class='line'>
+</span><span class='line'>    <span class="k">\vfill</span>
+</span><span class='line'>
+</span><span class='line'>    Setting outer themes: <span class="k">\verb</span>`<span class="k">\useoutertheme</span><span class="nb">{</span>outerthemename<span class="nb">}</span>`
+</span><span class='line'><span class="k">\end</span><span class="nb">{</span>frame<span class="nb">}</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><a href="http://tuga-ossig.github.com/downloads/code/03-03-example.pdf">Download</a> the pdf version of this document
+to see the result.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Session-02]]></title>

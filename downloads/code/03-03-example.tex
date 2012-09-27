@@ -1,0 +1,175 @@
+\documentclass{beamer}
+\mode<presentation>
+{
+    \usetheme{Copenhagen} 
+    \usecolortheme{beaver}
+}
+
+\AtBeginSection[]
+{
+    \begin{frame}{Table of Contents}
+        \tableofcontents[currentsection]
+    \end{frame}
+}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\usepackage{hyperref}
+
+\author{Anon Ymous}
+\date{\today}
+
+\title{Beamer slides}
+
+\begin{document}
+
+\section{Beamer structure}
+\subsection{Sections and Subsections}
+
+\begin{frame}[fragile]
+    \frametitle{Sections and subsections}
+    \framesubtitle{Structuring frames}
+
+    Sections and subsections help organize and structure your presentation:
+    \begin{enumerate}
+        \item<1-| alert@1>
+        \verb`\section[Short Section Name]{Long Section Name}`
+        \item<1-| alert@2>
+        \verb`\subsection[Short Section Name]{Long Section Name}`
+    \end{enumerate}
+    \vfill
+    ``Short names'' go into slide headers; and ``Long names'' go into outlines.
+    \vfill
+\end{frame}
+\begin{frame}[fragile]
+    \frametitle{Tips and tricks}
+    \framesubtitle{Structuring Tips and Tricks}
+    \begin{itemize}
+        \item<1-| alert@1>
+        The sections and subsections will appear automatically in the
+        presentation's outline.
+        \item<1-| alert@2>
+        Use \verb`\tableofcontents[section]` to keep audience informed of
+        your talk's general plan.
+    \end{itemize}
+\end{frame}
+\begin{frame}[fragile]
+    \frametitle{AtBeginSection}
+    \framesubtitle{A presentational trick}
+
+    Insert the following in the preamble:
+    \begin{verbatim}
+    \AtBeginSection[]
+    {
+        \begin{frame}{Table of Contents}
+            \tableofcontents[currentsection]
+        \end{frame}
+    }
+    \end{verbatim}
+
+    You'll have at the beginning of every section an automatically inserted
+    section outline, helping your audience to stay informed of progress.
+\end{frame}
+
+\subsection{Structuring guideline}
+
+\begin{frame}
+    \frametitle{Structuring numbers}
+    \begin{description}
+        \item<1-| alert@1>[presentation] ideally 3 sections, but not more then 4.
+        \item<1-| alert@2>[sections] ideally 3 subsections, but not more then 4.
+        \item<1-| alert@3>[sections] ideally have the same number of subsections.
+        \item<1-| alert@4>[subsections] ideally contain in average 7 frames,
+        but not more then 15.
+    \end{description}
+\end{frame}
+\begin{frame}
+    \frametitle{Tip on displayed content}
+
+    According to cognitive science studies, the human mind captures in
+    average 4 concepts from a presentation slide, so this presentation is most
+    probably a bad one in regard to this rule.
+\end{frame}
+
+\section{Beamer themes}
+\subsection{Theme structure}
+\begin{frame}
+    \frametitle{Color themes, Inner themes, and Outer themes}
+    \framesubtitle{What presentation themes are made of}
+    \begin{description}
+        \item<1-| alert@1>[Color themes]
+        controls colors for bullets, background, text, etc.
+        \item<1-| alert@2>[Fonts themes]
+        controls which fonts or font attributes are used. Font colors of all
+        text elements can be specified independently.
+        \item<1-| alert@3>[Inner themes]
+        controls main title, environments, figures and tables, footnotes, etc.
+        \item<1-| alert@4>[Outer themes]
+        control head-/foot-lines, sidebars, frame titles, etc.
+    \end{description}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Theme list}
+    \framesubtitle{Some commonly used themes}
+
+    default, AnnArbor, Antibes, Bergen, Berkeley, Berlin, Boadilla,
+    CambridgeUS, Copenhagen, Darmstadt, Dresden, Frankfurt, Goettingen,
+    Hannover, Ilmenau, JuanLesPins, Luebeck, Madrid, Malmoe, Marburg,
+    Montpellier, PaloAlto, Pittsburgh, Rochester, Singapore, Szeged, Warsaw.
+
+    \vfill
+
+    Setting theme: \verb`\usetheme{theme name}`
+\end{frame}
+\begin{frame}[fragile]
+    \frametitle{Color themes list}
+    \framesubtitle{Some commonly used color themes}
+
+    default, albatross, beaver, beetle, crane, dolphin, dove, fly, lily,
+    orchid, rose, seagull, seahorse, whale, wolverine.
+
+    \vfill
+
+    Setting color theme: \verb`\usecolortheme{colorthemename}`
+\end{frame}
+\begin{frame}[fragile]
+    \frametitle{Font themes list}
+    \framesubtitle{Some commonly used fonts themes}
+
+    default, professionalfonts, serif, structurebold, structureitalicserif,
+    structuresmallcapsserif, structureitalicserif
+
+    \vfill
+
+    Setting font themes: \verb`\usefonttheme{fontthemename}`
+\end{frame}
+\begin{frame}[fragile]
+    \frametitle{Inner themes list}
+    \framesubtitle{Some commonly used inner themes}
+
+    circles, inmargin, rectangles, and rounded
+
+    \vfill
+
+    Setting inner themes: \verb`\useinnertheme{innerthemename}`
+\end{frame}
+\begin{frame}[fragile]
+    \frametitle{Outer themes list}
+    \framesubtitle{Some commonly used outer themes}
+
+    default, infolines, miniframes, smoothbars, sidebar, split, shadow, tree,
+    smoothtree.
+
+    \vfill
+
+    Setting outer themes: \verb`\useoutertheme{outerthemename}`
+\end{frame}
+
+
+\end{document}

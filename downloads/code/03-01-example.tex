@@ -1,8 +1,93 @@
+\documentclass[a4paper]{article}
 
-\begin{frame}
-    \titlepage
-\end{frame}
-\begin{frame}
-    \frametitle{Outline}
-    \tableofcontents
-\end{frame}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\usepackage{hyperref}
+
+\author{Anon Ymous}
+\date{\today}
+
+\title{Hyperlinks}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\section{Basic}
+\LaTeX enables typesetting of hyperlinks through a package called
+\textbf{hyperref}.
+This works with pdflatex which is what we've been using so far.
+
+If you use it, you will be able to include interactive links and all your
+intra-document references (like the table of contents) will be turned into
+hyperlinks.
+
+All you need to do in order to start playing with hyperlinks in latex, is to
+include \verb`\usepackage{hyperref}` in the preamble.
+
+\subsection{URL}
+\url{http://en.wikibooks.org/wiki/LaTeX/Hyperlinks}
+
+It's often useful in documents to include a reference to other documents online.
+You can pass your link as an argument of the \verb`\url` command, i.e.
+\verb`\url{http://en.wikibooks.org/wiki/LaTeX/Hyperlinks}` and it does
+exactly that.
+
+Now clicking on the link will open your default browser and load the link for
+you which is good enough for now.
+
+Notice that the URL is displayed using a monospace font.
+
+
+\subsection{Links with description}
+\href{http://en.wikibooks.org/wiki/LaTeX/Hyperlinks}{\LaTeX{} Hyperlinks}
+
+Being able to link to other documents online is nice, but sometimes it would
+be more desirable to have a piece of text describing the link as the
+interactive link.
+
+This is accomplished using the \verb`\href{url}{description}` command, which
+takes your link's address as first argument, and the description as second.
+
+In this example, \textbf{\LaTeX{} Hyperlinks} is the description,
+and is shown instead of the address in the standard document font, but still
+clicking on the text, would have the previous behavior: opening the link in the default browser.
+
+\section{Advanced}
+
+\subsection{email addresses}
+\href{mailto:my_address@example.com}{my\_address@example.com}
+
+You can use the mailto URI scheme with your email address in order to create
+a link. Clicking the link will open the default email client, with a new
+empty message and the address in the \textit{To:} field.
+
+If you want people to be able to click on your email address to send you a
+message, all you need to do is prefix your email address with \texttt{mailto:}
+like in the example, and rewrite your email address in the description,
+escaping special characters with \verb`\` like the underscore in the example.
+
+For more technical information concerning the mailto URI scheme, take a look at
+the \href{http://en.wikipedia.org/wiki/Mailto}{mailto page} on wikipedia.
+
+
+\subsection{Future}
+You might have noticed that your table of contents is now interactive, but also
+that links have a red boarder around them, rendering the table of content
+ugly for on-screen displaying.
+
+We'll see next time how that can be customized using the \verb`\hypersetup`
+command in the preamble. You can read more about this in the
+\href{http://en.wikibooks.org/wiki/LaTeX/Hyperlinks#Customization}
+{customization} section of the Hyperlinks chapter in the \LaTeX wikibook.
+
+We'll also cover next time intra-document references and labels.
+
+
+\end{document}
